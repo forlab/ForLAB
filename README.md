@@ -38,13 +38,13 @@ To get started on **Visual Studio 2010:**
 
 Before you contribute, please read through the contributing and developer guides to get an idea of what kinds of pull requests we will or won't accept.
 
-* [Contributing Guide]
-* [Developer Guide]
+* [Contributing Guide](https://github.com/forlab/ForLAB/)
+* [Developer Guide](https://github.com/forlab/ForLAB/)
 
 Want to get more familiar with what's going on in the code?
 
-* [Pull requests: Open/Closed]
-* [Issues]
+* [Pull requests: Open/Closed](https://github.com/forlab/ForLAB/)
+* [Issues](https://github.com/forlab/ForLAB/)
 
 You are also encouraged to start a discussion by filing an issue or creating a gist.
 
