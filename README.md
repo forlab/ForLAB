@@ -19,3 +19,37 @@ generate informed, evidence-based forecasts:
 * **Demand and supply planning:** Promotes development of evidence-based supply plans
 * **Resource analysis:** Provides the opportunity to identify efficiencies within a laboratory network
 * **Validates** consumption with service rates
+
+##Source code
+
+* Clone the sources: git clone https://github.com/forlab/ForLAB.git
+
+##Building
+
+For the full supported experience, you will need to have Visual Studio 2010 or later. 
+
+To get started on **Visual Studio 2010:**
+
+1. Install Visual Studio 2010 or later.
+2. Clone the source code (see above).
+3. Open LQT.sln solution in Visual Studio 2010.
+
+##How to Engage, Contribute and Provide Feedback
+
+Before you contribute, please read through the contributing and developer guides to get an idea of what kinds of pull requests we will or won't accept.
+
+* [Contributing Guide]
+* [Developer Guide]
+
+Want to get more familiar with what's going on in the code?
+
+* [Pull requests: Open/Closed]
+* [Issues]
+
+You are also encouraged to start a discussion by filing an issue or creating a gist.
+
+##Components
+
+
+##License
+ForLAB is licensed under the ****.
