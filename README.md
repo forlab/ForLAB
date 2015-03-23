@@ -11,3 +11,11 @@ generate informed, evidence-based forecasts:
 * Compares forecasting methodologies to identify programmatic and commodity gaps
 * Analyzes actual and forecasted instrument utilization, diagnostics contribution, and instrument diversity
 * Models cost estimates costs associated with guideline shifts
+
+##Benefits within the quantification process
+* **Planning & Preparation:** Focuses data collection efforts to populate a standardized template
+* **Reduces** forecasting analysis time to minutes
+* **Improves** the reliability of the **forecast**
+* **Demand and supply planning:** Promotes development of evidence-based supply plans
+* **Resource analysis:** Provides the opportunity to identify efficiencies within a laboratory network
+* **Validates** consumption with service rates
