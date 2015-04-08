@@ -1,0 +1,32 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LQT.Core.Domain.RapidTestSpec, LQT.Core" table="RapidTestSpec">
+    <id name="Id" type="Int32" unsaved-value="-1">
+      <column name="RapidTestId" length="4" sql-type="int" not-null="true" unique="true" index="PK_RapidTestSpec"/>
+      <generator class="native" />
+    </id>
+    <property name="TestGroup" type="String">
+      <column name="TestGroup" length="16" sql-type="nvarchar" not-null="true"/>
+    </property>
+    <property name="UsageRate" type="Double">
+      <column name="UsageRate" length="8" sql-type="float" not-null="true"/>
+    </property>
+    <property name="ProductOrder" type="Int32">
+      <column name="ProductOrder" length="4" sql-type="int" not-null="true"/>
+    </property>
+    <property name="SerialTestSensitivity" type="Double">
+      <column name="SerialTestSensitivity" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="SerialTestSpecificity" type="Double">
+      <column name="SerialTestSpecificity" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ParallelTestSensitivity" type="Double">
+      <column name="ParallelTestSensitivity" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ParallelTestSpecificity" type="Double">
+      <column name="ParallelTestSpecificity" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <many-to-one name="Product" class="LQT.Core.Domain.MasterProduct, LQT.Core">
+      <column name="ProductId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.ForlabSite, LQT.Core" table="Site">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="SiteID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="SiteName" type="String">
+			<column name="SiteName" length="64" sql-type="nvarchar" not-null="true"/>
+		</property>
+    <property name="CD4TestingDaysPerMonth" type="Int32">
+      <column name="CD4TestingDaysPerMonth" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ChemistryTestingDaysPerMonth" type="Int32">
+      <column name="ChemistryTestingDaysPerMonth" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="HematologyTestingDaysPerMonth" type="Int32">
+      <column name="HematologyTestingDaysPerMonth" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ViralLoadTestingDaysPerMonth" type="Int32">
+      <column name="ViralLoadTestingDaysPerMonth" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="OtherTestingDaysPerMonth" type="Int32">
+      <column name="OtherTestingDaysPerMonth" length="4" sql-type="int" not-null="false"/>
+    </property>
+
+    <property name="CD4RefSite" type="Int32">
+      <column name="CD4RefSite" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ChemistryRefSite" type="Int32">
+      <column name="ChemistryRefSite" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="HematologyRefSite" type="Int32">
+      <column name="HematologyRefSite" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ViralLoadRefSite" type="Int32">
+      <column name="ViralLoadRefSite" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="OtherRefSite" type="Int32">
+      <column name="OtherRefSite" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="WorkingDays" type="Int32">
+      <column name="WorkingDays" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="SiteLevel" type="String">
+      <column name="SiteLevel" length="64" sql-type="nvarchar" not-null="false"/>
+    </property>
+    
+		<many-to-one name="Region" class="LQT.Core.Domain.ForlabRegion, LQT.Core">
+			<column name="RegionID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+    <many-to-one name="SiteCategory" class="LQT.Core.Domain.SiteCategory, LQT.Core">
+      <column name="CategoryID" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    
+    <bag name="SiteStatuses" cascade="all" lazy="true" table="SiteStatus">
+      <key column="SiteId" />
+      <composite-element class="LQT.Core.Domain.SiteStatus, LQT.Core" >
+        <parent name="Site" />
+        <property name="OpenedFrom" column="OpenedFrom" type="DateTime" not-null="true" />
+        <property name="ClosedOn" column="ClosedOn" type="DateTime" not-null="false"/>
+      </composite-element>
+    </bag>
+
+    <bag name="SiteInstruments" lazy="true"  cascade="all" table="SiteInstrument">
+      <key column="SiteID" />
+      <composite-element class="LQT.Core.Domain.SiteInstrument, LQT.Core" >
+        <parent name="Site" />
+        <property name="Quantity" column="Quantity" type="Int32" not-null="true" />
+        <property name="TestRunPercentage" column="TestRunPercentage" length="9" type="Decimal" not-null="false"/>
+        <many-to-one name="Instrument" class="LQT.Core.Domain.Instrument, LQT.Core" column="InstrumentID" cascade="none"  />
+      </composite-element>
+    </bag>
+
+ 
+
+  </class>
+</hibernate-mapping>

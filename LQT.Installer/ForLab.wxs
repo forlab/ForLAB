@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"  xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <!--Remember: you need to change ProductVersion and ProductCode-->
+
+  <?define PreviousVersion="1.6.8" ?>
+  <?define ProductVersion="1.6.9" ?>
+  <?define UpgradeCode="AE84346E-1F31-4D77-BE95-D0E7E7D7133A"?>
+  <?define ProductCode="ED9D3B54-BA1D-4FE7-8F40-74F75A8F92A4"?>
+                        
+    <Product Id="$(var.ProductCode)" Name="ForLAB Laboratory Product Quantification Tools $(var.ProductVersion)" Language="1033" 
+           Version="$(var.ProductVersion)"  Manufacturer="CHAI"   UpgradeCode="$(var.UpgradeCode)">
+
+    <Package Comments="ForLAB Laboratory Product Quantification Tools" Compressed="yes" InstallerVersion="200" InstallPrivileges="elevated"
+      InstallScope="perMachine" Keywords="ForLAB Laboratory Product Quantification Tools" Languages="1033" Manufacturer="CHAI Ethiopia" Platforms="Intel" />
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" CompressionLevel="high"/>
+
+    <PropertyRef  Id="NETFRAMEWORK35"/>
+    <Condition Message="This application requires .NET Framework 3.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK35]]>
+    </Condition>
+
+    <Upgrade Id="$(var.UpgradeCode)">
+      <UpgradeVersion Minimum="$(var.ProductVersion)" IncludeMinimum="no" OnlyDetect="yes" Language="1033" Property="NEWERPRODUCTFOUND" />
+      <UpgradeVersion Minimum="$(var.PreviousVersion)" IncludeMinimum="yes" Maximum="$(var.ProductVersion)" IncludeMaximum="no" 
+                      Language="1033" Property="UPGRADEFOUND" />
+    </Upgrade>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="ForLAB LQT"/>
+      </Directory>
+      <Directory Id="DesktopFolder" SourceName="User's Desktop">
+        <Component Id="dir_desktop" Guid="33A0E743-1452-4B27-9C48-90892850A612">
+          <CreateFolder Directory="DesktopFolder" />
+          <RegistryValue Id="dir_desktop" Root="HKCU" Key="Software\[Manufacturer]\[ProductName]\{33A0E743-1452-4B27-9C48-90892850A612}" Name="DesktopFolder" Value="[DesktopFolder]" Type="string" KeyPath="yes" />
+          <RemoveFolder Id="dir_desktop" Directory="DesktopFolder" On="uninstall" />
+        </Component>
+      </Directory>
+      <Directory Id="ProgramFilesFolder" SourceName="User's Programs Menu">
+        <Directory Id="DIR_ROOT" Name="ForLAB">
+          <Component Id="ProductComponent" Guid="4B8B9B5F-C7E9-46BA-BB2F-E5B1F29A2332">
+            <File Id="TaskPane.dll" Source="TaskPane.dll"/>
+            <File Id="Castle.DynamicProxy.dll" Source="Castle.DynamicProxy.dll" />
+            <File Id="System.Windows.Forms.DataVisualization.dll" Source="System.Windows.Forms.DataVisualization.dll" />
+            <File Id="Iesi.Collections.dll" Source="Iesi.Collections.dll" />
+            <File Id="log4net.dll" Source="log4net.dll" />
+            <File Id="NHibernate.dll" Source="NHibernate.dll" />
+            <File Id="LQT.Core.dll" Source="LQT.Core.dll" />
+            <File Id="ForLab.exe" Source="ForLab.exe" />
+            <File Id="LQT.GUI.exe.config" Source="LQT.GUI.exe.config" />
+            <File Id="Microsoft.Office.Interop.Excel.dll" Source="Microsoft.Office.Interop.Excel.dll" />
+
+            <File Id="Microsoft.SqlServer.ConnectionInfo.dll" Source="Microsoft.SqlServer.ConnectionInfo.dll" />
+            <File Id="Microsoft.SqlServer.Management.Sdk.Sfc.dll" Source="Microsoft.SqlServer.Management.Sdk.Sfc.dll" />
+            <File Id="Microsoft.SqlServer.Smo.dll" Source="Microsoft.SqlServer.Smo.dll" />
+            <File Id="Microsoft.SqlServer.SmoExtended.dll" Source="Microsoft.SqlServer.SmoExtended.dll" />
+          </Component>
+
+          <Component Id="LQT.GUI" Guid="C7476FEF-E31C-46CC-81CB-C5CDF1F02ABF">
+            <File Id="LQT.GUI.exe" Source="LQT.GUI.exe" />
+            <Shortcut Id="DesktopShortcut" Directory="DesktopFolder" Name="ForLAB" Icon="App.ico" WorkingDirectory="DIR_ROOT" Advertise="yes"/>
+            <Registry Id="ForLAB" Root="HKLM" Key="SOFTWARE\ForLAB $(var.ProductVersion)" Action="createKeyAndRemoveKeyOnUninstall">
+              <Registry Id="USERNAME" Type="string" Action="write" Name="DATABASE_LOGIN_NAME" Value="sa"/>
+              <Registry Id="DATABASE" Type="string" Action="write" Name="DATABASE_NAME" Value="ForLAB" />
+              <Registry Id="SERVER" Type="string" Action="write" Name="DATABASE_SERVER_NAME" Value="(local)"/>
+              <Registry Id="PASSWORD" Type="string" Action="write" Name="DATABASE_PASSWORD" Value="password"/>
+              <Registry Id="TIMEOUT" Type="string" Action="write" Name="DATABASE_TIMEOUT" Value="60"/>
+              <Registry Id="ISECURITY" Type="string" Action="write" Name="INTEGRATED_SECURITY" Value="true"/>
+            </Registry>
+          </Component>
+          <Directory Id="DIR_BACKUP" Name="Backup">
+            <Component Id="backup" Guid="D9F1DE44-90CB-499C-9C4F-C290176DE4DC">
+              <CreateFolder/>
+            </Component>
+          </Directory>
+          <Directory Id="DIR_REPORTS" Name="Reports">
+            <Directory Id="dir_reportsicono" Name="Reports.Icono">
+              <Component Id="dir_reportsicono" Guid="D64BE968-E6D8-485C-A0C5-F1822446688E">
+                <File Id="chk_checked.png" Source="Reports\Reports.Icono\chk_checked.png" />
+                <File Id="chk_unchecked.png" Source="Reports\Reports.Icono\chk_unchecked.png" />
+                <CreateFolder/>
+              </Component>
+            </Directory>
+            <Component Id="reports" Guid="05D5194F-86A7-485B-A68C-CF38F7ED1CBA">
+              <File Id="CD4TestNumberForecast.rdlc" Source="Reports\CD4TestNumberForecast.rdlc" />
+              <File Id="ChemistryNumberofTestForecast.rdlc" Source="Reports\ChemistryNumberofTestForecast.rdlc" />
+              <File Id="FullQSummary.rdlc"  Source="Reports\FullQSummary.rdlc" />
+              <File Id="HemaandViralTestNumberForecast.rdlc"  Source="Reports\HemaandViralTestNumberForecast.rdlc" />
+              <File Id="MorbiditySupplyForecast.rdlc" Source="Reports\MorbiditySupplyForecast.rdlc" />
+              <File Id="MorbiditySupplyProcurement.rdlc" Source="Reports\MorbiditySupplyProcurement.rdlc" />
+              <File Id="PatientNumberForecast.rdlc" Source="Reports\PatientNumberForecast.rdlc" />
+              <File Id="ServiceQSummary.rdlc" Source="Reports\ServiceQSummary.rdlc" />
+
+
+              <File Id="Dforcastcostsummary.rdlc" Source="Reports\Dforcastcostsummary.rdlc" />
+              <File Id="forcastpatientsummarywithgraph.rdlc" Source="Reports\forcastpatientsummarywithgraph.rdlc" />
+              <File Id="forecastcomparision.rdlc" Source="Reports\forecastcomparision.rdlc" />
+              <File Id="Forecastresulttestbyregion.rdlc" Source="Reports\Forecastresulttestbyregion.rdlc" />
+              <File Id="rptInstrumentList.rdlc" Source="Reports\rptInstrumentList.rdlc" />
+              <File Id="rptInstrumentListwithControlTdays.rdlc" Source="Reports\rptInstrumentListwithControlTdays.rdlc" />
+              <File Id="rptProductList.rdlc" Source="Reports\rptProductList.rdlc" />
+              <File Id="rptProductPriceList.rdlc" Source="Reports\rptProductPriceList.rdlc" />
+
+              <File Id="rptProductUsageList.rdlc" Source="Reports\rptProductUsageList.rdlc" />
+              <File Id="rptRegion.rdlc" Source="Reports\rptRegion.rdlc" />
+              <File Id="rptRegionWithSiteCount.rdlc" Source="Reports\rptRegionWithSiteCount.rdlc" />
+              <File Id="rptSite.rdlc" Source="Reports\rptSite.rdlc" />
+              <File Id="rptSiteInstrumentList.rdlc" Source="Reports\rptSiteInstrumentList.rdlc" />
+              <File Id="rptSitewithworkingdays.rdlc" Source="Reports\rptSitewithworkingdays.rdlc" />
+
+
+              <File Id="rptTestList.rdlc" Source="Reports\rptTestList.rdlc" />
+              <File Id="sandcsummary.rdlc" Source="Reports\sandcsummary.rdlc" />
+
+              <File Id="rptServiceCostSummary.rdlc" Source="Reports\rptServiceCostSummary.rdlc" />
+              <File Id="rptConsumptionCostSummary.rdlc" Source="Reports\rptConsumptionCostSummary.rdlc" />
+
+              <CreateFolder/>
+            </Component>
+          </Directory>
+
+          <Directory Id="DIR_EXPORT" Name="Export">
+            <Component Id="export" Guid="F07B3212-0EFD-4A5F-8A8F-563A747CDBA7">
+              <CreateFolder/>
+            </Component>
+          </Directory>
+          <Directory Id="DIR_UPDATE" Name="Update">
+            <Component Id="update" Guid="6B8357FF-8363-438C-9B29-4D2FA2D68F8B">
+              <File Id="InitialData.sql" Source="Update\InitialData.sql" />
+              <File Id="CreateDatabase.sql" Source="Update\CreateDatabase_v1.6.1.sql" />
+              <File Id="InsertProducts.sql" Source="Update\InsertProducts.sql" />
+            </Component>
+          </Directory>
+
+        </Directory>
+      </Directory>
+
+    </Directory>
+
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="EFB9DD55-EB5D-45F1-9C36-B3EFADF7DA2D">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="ForLAB LQT" Description="ForLAB Laboratory Quantification Tools"
+                  Target="[DIR_ROOT]LQT.GUI.exe" WorkingDirectory="DIR_ROOT"/>
+        <Shortcut Id="UninstallProduct" Name="Uninstall Application" Description="Uninstall Application"
+                  Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\ForLAB" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id="ProductFeature" Title="ForLAB" Level="1">
+      <ComponentRef Id="update" />
+      <ComponentRef Id="export" />
+      <ComponentRef Id="backup" />
+      <ComponentRef Id="reports" />
+      <ComponentRef Id="dir_reportsicono"/>
+      <ComponentRef Id="ProductComponent" />
+      <ComponentRef Id="LQT.GUI" />
+      <ComponentRef Id="dir_desktop" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+
+    <CustomAction Id="PreventDowngrading" Error="Newer version already installed." />
+
+    <InstallExecuteSequence>
+      <Custom Action="PreventDowngrading" After="FindRelatedProducts">NEWERPRODUCTFOUND</Custom>
+      <RemoveExistingProducts Before="InstallInitialize" />
+    </InstallExecuteSequence>
+
+    <InstallUISequence>
+      <Custom Action="PreventDowngrading" After="FindRelatedProducts">NEWERPRODUCTFOUND</Custom>
+    </InstallUISequence>
+    
+    <WixVariable Id="Wix" Value="License\LGPL3.rtf"/>
+    <WixVariable Id="WixUILicenseRtf" Value="License\LGPL3.rtf"/>
+    <WixVariable Id="WixUIDialogBmp" Value="Bitmaps\background.bmp"/>
+    <WixVariable Id="WixUIBannerBmp" Value="Bitmaps\banner.bmp"/>
+
+    <Icon Id="App.ico" SourceFile="Bitmaps\App.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="App.ico" />
+    <Property Id="WIXUI_INSTALLDIR" Value="DIR_ROOT" ></Property>
+    <UIRef Id="WixUI_InstallDir" />
+  </Product>
+</Wix>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.ForecastCategoryTest, LQT.Core" table="ForecastCategoryTest">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="ID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="CDuration" type="String">
+			<column name="CDuration" length="24" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="AmountUsed" type="Decimal">
+			<column name="AmountUsed" length="9" sql-type="decimal" not-null="false"/>
+		</property>
+		<property name="StockOut" type="Int32">
+			<column name="StockOut" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="Adjusted" type="Decimal">
+			<column name="Adjusted" length="9" sql-type="decimal" not-null="false"/>
+		</property>
+    <property name="DurationDateTime" type="DateTime">
+      <column name="DurationDateTime" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="InstrumentDowntime" type="Int32">
+      <column name="InstrumentDowntime" length="4" sql-type="int" not-null="false"/>
+    </property>
+		<many-to-one name="Test" class="LQT.Core.Domain.Test, LQT.Core">
+			<column name="TestID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		
+		<many-to-one name="Category" class="LQT.Core.Domain.ForecastCategory, LQT.Core">
+			<column name="CategoryID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		
+		
+	</class>
+</hibernate-mapping>

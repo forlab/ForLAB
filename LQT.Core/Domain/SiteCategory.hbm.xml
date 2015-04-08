@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.SiteCategory, LQT.Core" table="SiteCategory">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="CategoryID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="CategoryName" type="String">
+			<column name="CategoryName" length="64" sql-type="nvarchar" not-null="true"/>
+		</property>
+   
+		</class>
+</hibernate-mapping>

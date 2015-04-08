@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.ARTSite, LQT.Core" table="MordidityCategorySite">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_MordidityCategorySite"/>
+			<generator class="native" />
+		</id>
+		<property name="ForecastVCT" type="Boolean">
+			<column name="ForecastVCT" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="ForecastCD4" type="Boolean">
+			<column name="ForecastCD4" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="ForecastChemistry" type="Boolean">
+			<column name="ForecastChemistry" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="ForecastHematology" type="Boolean">
+			<column name="ForecastHematology" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="ForecastViralLoad" type="Boolean">
+			<column name="ForecastViralLoad" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="ForecastOtherTest" type="Boolean">
+			<column name="ForecastOtherTest" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="ForecastConsumable" type="Boolean">
+			<column name="ForecastConsumable" length="1" sql-type="bit" not-null="true"/>
+		</property>
+    <property name="TimeZeroPatientOnTreatment" type="Double">
+      <column name="TimeZeroPatientOnTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="TimeZeroPatientOnPreTreatment" type="Double">
+      <column name="TimeZeroPatientOnPreTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="OldDataPatientOnTreatment" type="Double">
+      <column name="OldDataPatientOnTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="OldDataPatientOnPreTreatment" type="Double">
+      <column name="OldDataPatientOnPreTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="OldDataPatientOnTreatmentPercent" type="Double">
+      <column name="OldDataPatientOnTreatmentPercent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="OldDataPatientOnPreTreatmentPercent" type="Double">
+      <column name="OldDataPatientOnPreTreatmentPercent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="EverSTimeZeroPatientOnTreatment" type="Double">
+      <column name="EverSTimeZeroPatientOnTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="EverSTimeZeroPatientOnPreTreatment" type="Double">
+      <column name="EverSTimeZeroPatientOnPreTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="EverSPatientOnTreatment" type="Double">
+      <column name="EverSPatientOnTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="EverSPatientOnTreatmentPercent" type="Double">
+      <column name="EverSPatientOnTreatmentPercent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="EverSPatientOnPreTreatment" type="Double">
+      <column name="EverSPatientOnPreTreatment" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="EverSPatientOnPreTreatmentPercent" type="Double">
+      <column name="EverSPatientOnPreTreatmentPercent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTRecentMonth" type="Double">
+      <column name="NTPT_RecentMonth" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTJanuary" type="Double">
+      <column name="NTPT_January" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTFebruary" type="Double">
+      <column name="NTPT_February" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTMarch" type="Double">
+      <column name="NTPT_March" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTApril" type="Double">
+      <column name="NTPT_April" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTMay" type="Double">
+      <column name="NTPT_May" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTJune" type="Double">
+      <column name="NTPT_June" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTJuly" type="Double">
+      <column name="NTPT_July" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTAugust" type="Double">
+      <column name="NTPT_August" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTSeptember" type="Double">
+      <column name="NTPT_September" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTOctober" type="Double">
+      <column name="NTPT_October" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTNovember" type="Double">
+      <column name="NTPT_November" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTDecember" type="Double">
+      <column name="NTPT_December" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTPercentOfChildren" type="Double">
+      <column name="NTPT_PercentOfChildren" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTGrowthTarget" type="Double">
+      <column name="NTPT_GrowthTarget" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTPTApplyLinerGrowth" type="Boolean">
+      <column name="NTPT_ApplyLinerGrowth" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="NTTRecentMonth" type="Double">
+      <column name="NTT_RecentMonth" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTJanuary" type="Double">
+      <column name="NTT_January" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTFebruary" type="Double">
+      <column name="NTT_February" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTMarch" type="Double">
+      <column name="NTT_March" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTApril" type="Double">
+      <column name="NTT_April" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTMay" type="Double">
+      <column name="NTT_May" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTJune" type="Double">
+      <column name="NTT_June" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTJuly" type="Double">
+      <column name="NTT_July" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTAugust" type="Double">
+      <column name="NTT_August" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTSeptember" type="Double">
+      <column name="NTT_September" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTOctober" type="Double">
+      <column name="NTT_October" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTNovember" type="Double">
+      <column name="NTT_November" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTDecember" type="Double">
+      <column name="NTT_December" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTPercentOfChildren" type="Double">
+      <column name="NTT_PercentOfChildren" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTGrowthTarget" type="Double">
+      <column name="NTT_GrowthTarget" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="NTTApplyLinerGrowth" type="Boolean">
+      <column name="NTT_ApplyLinerGrowth" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="AdultTestingPopulation" type="Double">
+      <column name="AdultTestingPopulation" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PediatricTestingPopulation" type="Double">
+      <column name="PediatricTestingPopulation" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AdultDepartWoutFollowup" type="Double">
+      <column name="AdultDepartWoutFollowup" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PediatricDepartWoutFollowup" type="Double">
+      <column name="PediatricDepartWoutFollowup" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="DiagnosesReceiveCD4" type="Double">
+      <column name="DiagnosesReceiveCD4" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AITAnnualPatientAttrition" type="Double">
+      <column name="AIT_AnnualPatientAttrition" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AITExistingPatientBloodDraws" type="Double">
+      <column name="AIT_ExistingPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AITNewPatientBloodDraws" type="Double">
+      <column name="AIT_NewPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AIPAnualPatientAttrition" type="Double">
+      <column name="AIP_AnualPatientAttrition" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AIPAnnualMigration" type="Double">
+      <column name="AIP_AnnualMigration" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AIPExistingPatientBloodDraws" type="Double">
+      <column name="AIP_ExistingPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AIPNewPatientBloodDraws" type="Double">
+      <column name="AIP_NewPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PITAnnualPatientAttrition" type="Double">
+      <column name="PIT_AnnualPatientAttrition" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PITExistingPatientBloodDraws" type="Double">
+      <column name="PIT_ExistingPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PITNewPatientBloodDraws" type="Double">
+      <column name="PIT_NewPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PIPAnualPatientAttrition" type="Double">
+      <column name="PIP_AnualPatientAttrition" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PIPAnnualMigration" type="Double">
+      <column name="PIP_AnnualMigration" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PIPExistingPatientBloodDraws" type="Double">
+      <column name="PIP_ExistingPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PIPNewPatientBloodDraws" type="Double">
+      <column name="PIP_NewPatientBloodDraws" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AdultTestingEfficiency" type="Double">
+      <column name="AdultTestingEfficiency" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PediatricTestingEfficiency" type="Double">
+      <column name="PediatricTestingEfficiency" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PediatricsPreExistingPatients" type="Double">
+      <column name="PediatricsPreExistingPatients" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ScrTest1Percent" type="Double">
+      <column name="ScrTest1Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ScrTest1" type="Int32">
+      <column name="ScrTest1" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ScrTest2Percent" type="Double">
+      <column name="ScrTest2Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ScrTest2" type="Int32">
+      <column name="ScrTest2" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ScrTest3Percent" type="Double">
+      <column name="ScrTest3Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ScrTest3" type="Int32">
+      <column name="ScrTest3" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ConTest1Percent" type="Double">
+      <column name="ConTest1Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ConTest1" type="Int32">
+      <column name="ConTest1" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ConTest2Percent" type="Double">
+      <column name="ConTest2Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ConTest2" type="Int32">
+      <column name="ConTest2" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ConTest3Percent" type="Double">
+      <column name="ConTest3Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="ConTest3" type="Int32">
+      <column name="ConTest3" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="TieTest1Percent" type="Double">
+      <column name="TieTest1Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="TieTest1" type="Int32">
+      <column name="TieTest1" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="TieTest2Percent" type="Double">
+      <column name="TieTest2Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="TieTest2" type="Int32">
+      <column name="TieTest2" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="TieTest3Percent" type="Double">
+      <column name="TieTest3Percent" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="TieTest3" type="Int32">
+      <column name="TieTest3" length="4" sql-type="int" not-null="false"/>
+    </property>
+    
+		<many-to-one name="MorbidityCategory" class="LQT.Core.Domain.MorbidityCategory, LQT.Core">
+			<column name="CategoryId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="Site" class="LQT.Core.Domain.ForlabSite, LQT.Core">
+			<column name="SiteId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

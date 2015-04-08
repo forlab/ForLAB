@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.QuantifyMenu, LQT.Core" table="QuantifyMenu">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_QuantifyMenu"/>
+			<generator class="native" />
+		</id>
+    
+    <property name="InstrumentId" type="Int32">
+			<column name="InstrumentId" length="4" sql-type="int" not-null="false"/>
+		</property>
+    <property name="ProductId" type="Int32">
+      <column name="ProductId" length="4" sql-type="int" not-null="false"/>
+    </property>
+		<property name="ClassOfTest" type="String">
+			<column name="ClassOfTest" length="16" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="Title" type="String">
+			<column name="Title" length="156" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="TestType" type="String">
+			<column name="TestType" length="32" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Duration" type="String">
+			<column name="Duration" length="16" sql-type="nvarchar" not-null="false"/>
+		</property>
+    <property name="ChemTestName" type="String">
+      <column name="ChemTestName" length="32" sql-type="nvarchar" not-null="false"/>
+    </property>
+		<many-to-one name="MorbidityTest" class="LQT.Core.Domain.MorbidityTest, LQT.Core">
+			<column name="MorbidityTetsId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<bag name="QuantificationMetrics" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key column="QuantifyMenuId"/>
+			<one-to-many class="LQT.Core.Domain.QuantificationMetric, LQT.Core"/>
+		</bag>
+	</class>
+</hibernate-mapping>

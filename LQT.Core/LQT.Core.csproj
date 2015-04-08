@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{931704FC-F588-42BE-905A-B72B0141F7A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LQT.Core</RootNamespace>
+    <AssemblyName>LQT.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\Lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\Lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="AppSettingsStore.Designer.cs">
+      <DependentUpon>AppSettingsStore.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DataAccess\DaoFactory.cs" />
+    <Compile Include="DataAccess\Interface\IForecastCategoryInstrumentDao.cs" />
+    <Compile Include="DataAccess\Interface\IQuantifyMenuDao.cs" />
+    <Compile Include="DataAccess\Interface\IQuantificationMetricDao.cs" />
+    <Compile Include="DataAccess\Interface\IMorbidityTestDao.cs" />
+    <Compile Include="DataAccess\Interface\IInventoryAssumptionDao.cs" />
+    <Compile Include="DataAccess\Interface\IARTSiteDao.cs" />
+    <Compile Include="DataAccess\Interface\ICD4TestNumberDao.cs" />
+    <Compile Include="DataAccess\Interface\IChemandOtherNumberofTestDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastCategoryTestDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastedResultDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastSiteTestDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastCategoryProductDao.cs" />
+    <Compile Include="DataAccess\Interface\IForlabParameterDao.cs" />
+    <Compile Include="DataAccess\Interface\IFTableDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastSiteProductDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastSiteDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastCategoryDao.cs" />
+    <Compile Include="DataAccess\Interface\IForecastInfoDao.cs" />
+    <Compile Include="DataAccess\Interface\IHemaandViralNumberofTestDao.cs" />
+    <Compile Include="DataAccess\Interface\IHIVRapidNumberofTestDao.cs" />
+    <Compile Include="DataAccess\Interface\IMorbidityForecastDao.cs" />
+    <Compile Include="DataAccess\Interface\IMorbiditySupplyForecastDao.cs" />
+    <Compile Include="DataAccess\Interface\IMorbiditySupplyProcurementDao.cs" />
+    <Compile Include="DataAccess\Interface\IPatientsNoofTestDao.cs" />
+    <Compile Include="DataAccess\Interface\IProductTypeDao.cs" />
+    <Compile Include="DataAccess\Interface\IProductDao.cs" />
+    <Compile Include="DataAccess\Interface\IInstrumentDao.cs" />
+    <Compile Include="DataAccess\Interface\IForlabSiteDao.cs" />
+    <Compile Include="DataAccess\Interface\IForlabRegionDao.cs" />
+    <Compile Include="DataAccess\Interface\IProtocolDao.cs" />
+    <Compile Include="DataAccess\Interface\IProtocolPanelDao.cs" />
+    <Compile Include="DataAccess\Interface\IRapidTestSpecDao.cs" />
+    <Compile Include="DataAccess\Interface\ISiteCategoryDao.cs" />
+    <Compile Include="DataAccess\Interface\ITestingGroupDao.cs" />
+    <Compile Include="DataAccess\Interface\ITestingAreaDao.cs" />
+    <Compile Include="DataAccess\Interface\IDao.cs" />
+    <Compile Include="DataAccess\Interface\ITestDao.cs" />
+    <Compile Include="DataAccess\NHibernateDaoFactory.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastCategoryInstrumentDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHQuantifyMenuDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHQuantificationMetricDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHMorbidityTestDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHInventoryAssumptionDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHARTSiteDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHCD4TestNumberDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHChemandOtherNumberofTestDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastedResultDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastSiteTestDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastCategoryTestDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastCategoryProductDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForlabParameterDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHFTableDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastSiteProductDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastInfoDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastSiteDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForecastCategoryDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHHemaandViralNumberofTestDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHHIVRapidNumberofTestDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHMorbidityForecastDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHMorbiditySupplyForecastDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHMorbiditySupplyProcurementDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHPatientsNoofTestDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHProductTypeDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHProductDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHInstrumentDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForlabSiteDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHForlabRegionDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHProtocolDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHProtocolPanelDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHRapidTestSpecDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHSiteCategoryDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHTestingGroupDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHTestingAreaDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHibernateDao.cs" />
+    <Compile Include="DataAccess\NHibernate\NHTestDao.cs" />
+    <Compile Include="Domain\BaseDataUsage.cs" />
+    <Compile Include="Domain\CD4TestNumber.cs" />
+    <Compile Include="Domain\ChemandOtherNumberofTest.cs" />
+    <Compile Include="Domain\Consumption.cs" />
+    <Compile Include="Domain\ForecastCategoryInstrument.cs" />
+    <Compile Include="Domain\ForlabParameter.cs" />
+    <Compile Include="Domain\HemaandViralNumberofTest.cs" />
+    <Compile Include="Domain\HIVRapidNumberofTest.cs" />
+    <Compile Include="Domain\InventoryAssumption.cs" />
+    <Compile Include="Domain\MorbidityCategory.cs" />
+    <Compile Include="Domain\ARTSite.cs" />
+    <Compile Include="Domain\MorbidityForecast.cs" />
+    <Compile Include="Domain\MorbiditySupplyForecast.cs" />
+    <Compile Include="Domain\MorbiditySupplyProcurement.cs" />
+    <Compile Include="Domain\MorbidityTest.cs" />
+    <Compile Include="Domain\PanelTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\PatientsNoofTest.cs" />
+    <Compile Include="Domain\PLexport.cs" />
+    <Compile Include="Domain\Protocol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\ProtocolPanel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\PSymptomDirectedTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\QuantificationMetric.cs" />
+    <Compile Include="Domain\QuantifyMenu.cs" />
+    <Compile Include="Domain\RapidTestSpec.cs" />
+    <Compile Include="Domain\ForecastCategory.cs" />
+    <Compile Include="Domain\ForecastCategoryProduct.cs" />
+    <Compile Include="Domain\ForecastCategorySite.cs" />
+    <Compile Include="Domain\ForecastCategoryTest.cs" />
+    <Compile Include="Domain\ForecastedResult.cs" />
+    <Compile Include="Domain\ForecastInfo.cs" />
+    <Compile Include="Domain\ForecastNRSite.cs" />
+    <Compile Include="Domain\ForecastSite.cs" />
+    <Compile Include="Domain\ForecastSiteProduct.cs" />
+    <Compile Include="Domain\ForecastSiteTest.cs" />
+    <Compile Include="Domain\ForlabRegion.cs" />
+    <Compile Include="Domain\ForlabSite.cs" />
+    <Compile Include="Domain\FResult.cs" />
+    <Compile Include="Domain\FResultSummaryView.cs" />
+    <Compile Include="Domain\FTable.cs" />
+    <Compile Include="Domain\FTableRow.cs" />
+    <Compile Include="Domain\IBaseDataUsage.cs" />
+    <Compile Include="Domain\Instrument.cs" />
+    <Compile Include="Domain\MAPEResult.cs" />
+    <Compile Include="Domain\MasterProduct.cs" />
+    <Compile Include="Domain\ProductPrice.cs" />
+    <Compile Include="Domain\ProductType.cs" />
+    <Compile Include="Domain\ProductUsage.cs" />
+    <Compile Include="Domain\SiteCategory.cs" />
+    <Compile Include="Domain\SiteInstrument.cs" />
+    <Compile Include="Domain\SiteStatus.cs" />
+    <Compile Include="Domain\Test.cs" />
+    <Compile Include="Domain\TestingArea.cs" />
+    <Compile Include="Domain\TestingGroup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserExceptions\CustomExceptionHandler.cs" />
+    <Compile Include="UserExceptions\LQTUserException.cs" />
+    <Compile Include="Util\ArtSiteCalculated.cs" />
+    <Compile Include="Util\DataRepository.cs" />
+    <Compile Include="Util\Enumration.cs" />
+    <Compile Include="Util\ForecastResultSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\LQTUserMessage.cs" />
+    <Compile Include="Util\MorbidityForecastUtil.cs" />
+    <Compile Include="Util\NHibernateHelper.cs" />
+    <Compile Include="Util\ReportRepository.cs" />
+    <Compile Include="Util\rmPercentageValidation.cs" />
+    <Compile Include="Util\rmPlatformValidation.cs" />
+    <Compile Include="Util\rmSupplyList.cs" />
+    <Compile Include="Util\SortExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\PanelTest.hbm.xml" />
+    <EmbeddedResource Include="Domain\Protocol.hbm.xml" />
+    <EmbeddedResource Include="Domain\ProtocolPanel.hbm.xml" />
+    <EmbeddedResource Include="Domain\PSymptomDirectedTest.hbm.xml" />
+    <EmbeddedResource Include="Domain\Test.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Domain\TestingArea.hbm.xml" />
+    <EmbeddedResource Include="Domain\TestingGroup.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForlabRegion.hbm.xml" />
+    <EmbeddedResource Include="Domain\ForlabSite.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\MasterProduct.hbm.xml" />
+    <EmbeddedResource Include="Domain\ProductType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\Instrument.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForecastCategory.hbm.xml" />
+    <EmbeddedResource Include="Domain\ForecastInfo.hbm.xml" />
+    <EmbeddedResource Include="Domain\ForecastSite.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForecastSiteProduct.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForecastCategoryProduct.hbm.xml" />
+    <EmbeddedResource Include="Domain\ForecastCategorySite.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForecastNRSite.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\FResult.hbm.xml" />
+    <EmbeddedResource Include="Domain\FTable.hbm.xml" />
+    <EmbeddedResource Include="Domain\FTableRow.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForecastCategoryTest.hbm.xml" />
+    <EmbeddedResource Include="Domain\ForecastSiteTest.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="AppSettingsStore.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AppSettingsStore.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\SiteCategory.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForecastedResult.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\MorbidityForecast.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\MorbidityCategory.hbm.xml" />
+    <EmbeddedResource Include="Domain\ARTSite.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\RapidTestSpec.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\CD4TestNumber.hbm.xml" />
+    <EmbeddedResource Include="Domain\ChemandOtherNumberofTest.hbm.xml" />
+    <EmbeddedResource Include="Domain\ForlabParameter.hbm.xml" />
+    <EmbeddedResource Include="Domain\HemaandViralNumberofTest.hbm.xml" />
+    <EmbeddedResource Include="Domain\HIVRapidNumberofTest.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Domain\InventoryAssumption.hbm.xml" />
+    <EmbeddedResource Include="Domain\MorbiditySupplyForecast.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Domain\PatientsNoofTest.hbm.xml" />
+    <EmbeddedResource Include="Domain\MorbiditySupplyProcurement.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\QuantificationMetric.hbm.xml" />
+    <EmbeddedResource Include="Domain\QuantifyMenu.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\MorbidityTest.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\ForecastCategoryInstrument.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

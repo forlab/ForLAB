@@ -1,0 +1,1960 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E3EDDDF-E26F-4F19-840D-236F901D39B1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LQT.GUI</RootNamespace>
+    <AssemblyName>LQT.GUI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.6.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LQT.GUI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>28A356B285D9C9852358C8C769C10AE0ACB45478</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\Lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Conversion.v3.5">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.SqlServer.Smo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="TaskPane">
+      <HintPath>..\Lib\TaskPane.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\FrmAssignTestingArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset\FrmAssignTestingArea.Designer.cs">
+      <DependentUpon>FrmAssignTestingArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\FrmImportIns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset\FrmImportIns.Designer.cs">
+      <DependentUpon>FrmImportIns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\FrmImportPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset\FrmImportPro.Designer.cs">
+      <DependentUpon>FrmImportPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\FrmSearchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset\FrmSearchProduct.Designer.cs">
+      <DependentUpon>FrmSearchProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\InstrumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset\InstrumentForm.Designer.cs">
+      <DependentUpon>InstrumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\ProductTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asset\ProductTypeForm.Designer.cs">
+      <DependentUpon>ProductTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\CustomToolTip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\CustomToolTip.Designer.cs">
+      <DependentUpon>CustomToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\GripBounds.cs" />
+    <Compile Include="CustomControl\ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\NativeMethods.cs" />
+    <Compile Include="CustomControl\Popup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\PopupAnimations.cs" />
+    <Compile Include="DBManager\BackupManager.cs" />
+    <Compile Include="DBManager\ConnectionManager.cs" />
+    <Compile Include="DBManager\DatabaseManager.cs" />
+    <Compile Include="DBManager\IConnectionManager.cs" />
+    <Compile Include="DBManager\SqlDatabaseSettings.cs" />
+    <Compile Include="DBManager\StructFactory.cs" />
+    <Compile Include="DurationPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DurationPicker.Designer.cs">
+      <DependentUpon>DurationPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFillterSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFillterSite.Designer.cs">
+      <DependentUpon>FrmFillterSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmForecastResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmForecastResult.Designer.cs">
+      <DependentUpon>FrmForecastResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInput.Designer.cs">
+      <DependentUpon>FrmInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMorbiditySupplyForecastAdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMorbiditySupplyForecastAdj.Designer.cs">
+      <DependentUpon>FrmMorbiditySupplyForecastAdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMselectCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMselectCon.Designer.cs">
+      <DependentUpon>FrmMselectCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMselectTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMselectTest.Designer.cs">
+      <DependentUpon>FrmMselectTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPickProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPickProducts.Designer.cs">
+      <DependentUpon>FrmPickProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPriceinput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPriceinput.Designer.cs">
+      <DependentUpon>FrmPriceinput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportedPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportedPeriod.Designer.cs">
+      <DependentUpon>FrmReportedPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectInstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectInstrument.Designer.cs">
+      <DependentUpon>FrmSelectInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectSheet.designer.cs">
+      <DependentUpon>FrmSelectSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectTest.Designer.cs">
+      <DependentUpon>FrmSelectTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectProduct.Designer.cs">
+      <DependentUpon>FrmSelectProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectTestArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectTestArea.Designer.cs">
+      <DependentUpon>FrmSelectTestArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowError.Designer.cs">
+      <DependentUpon>FrmShowError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericToDataTable.cs" />
+    <Compile Include="ImportConForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportConForm.Designer.cs">
+      <DependentUpon>ImportConForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportSerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportSerForm.Designer.cs">
+      <DependentUpon>ImportSerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewColumnSorter.cs" />
+    <Compile Include="ListViewItemComparer.cs" />
+    <Compile Include="Location\FrmImportRefSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\FrmImportRefSite.Designer.cs">
+      <DependentUpon>FrmImportRefSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\FrmImportRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\FrmImportRegion.Designer.cs">
+      <DependentUpon>FrmImportRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\FrmImportSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\FrmImportSite.Designer.cs">
+      <DependentUpon>FrmImportSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\FrmImportSiteInstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\FrmImportSiteInstrument.Designer.cs">
+      <DependentUpon>FrmImportSiteInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\FrmReferalSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\FrmReferalSite.Designer.cs">
+      <DependentUpon>FrmReferalSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\FrmSearchSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\FrmSearchSite.Designer.cs">
+      <DependentUpon>FrmSearchSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\FrmSiteCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\FrmSiteCat.Designer.cs">
+      <DependentUpon>FrmSiteCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\RegionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\RegionForm.Designer.cs">
+      <DependentUpon>RegionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\SiteCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\SiteCategoryForm.Designer.cs">
+      <DependentUpon>SiteCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Location\SiteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location\SiteForm.Designer.cs">
+      <DependentUpon>SiteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LQTChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LqtDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LqtDialogForm.Designer.cs">
+      <DependentUpon>LqtDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LQTListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LqtMainWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LqtMainWindowForm.Designer.cs">
+      <DependentUpon>LqtMainWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LQTProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LQTProgressBar.Designer.cs">
+      <DependentUpon>LQTProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LqtUtil.cs" />
+    <Compile Include="ManageQuantificationMenus.cs" />
+    <Compile Include="MorbidityCalculation\BaseCalc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\BudgetPeriodInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\CalcCD4Test.cs" />
+    <Compile Include="MorbidityCalculation\CalcChemistryTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\CalcConsumable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\CalcHematology.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\CalcOtherTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\CalcPatientNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\CalcRapidTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\CalcViralLoad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\CalculatedSitePatientNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\CTestPlatformQuantifyMenu.cs" />
+    <Compile Include="MorbidityCalculation\Class\ListOfPrimeryQR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\PlatformQuantifyMenu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\PlatformQuantifyObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\PlatformTestsAndControls.cs" />
+    <Compile Include="MorbidityCalculation\Class\PrimeryQuantifyedReagent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\QMenuWithValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\QuantifyedReagent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\RapidTestAlgorithm.cs" />
+    <Compile Include="MorbidityCalculation\Class\TestResultByPalform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\TestsAndControls.cs" />
+    <Compile Include="MorbidityCalculation\MonthlyOutput\MOutputConsumable.cs" />
+    <Compile Include="MorbidityCalculation\MonthlyOutput\MOutputCD4.cs" />
+    <Compile Include="MorbidityCalculation\MonthlyOutput\MOutputChemistryTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\MonthlyOutput\MOutputHematology.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\MonthlyOutput\MOutputOtherTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\MonthlyOutput\MOutputRapidTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\MonthlyOutput\MOutputViralLoad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MorbidityCalculation\Class\PlatformFactory.cs" />
+    <Compile Include="MorbidityCalculation\MorbidityCalcContainer.cs" />
+    <Compile Include="MorbidityCalculation\MorbidityCalculater.cs" />
+    <Compile Include="MorbidityProtocolSetting\FrmPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorbidityProtocolSetting\FrmPanel.Designer.cs">
+      <DependentUpon>FrmPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\AdultPatientBehavior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\AdultPatientBehavior.Designer.cs">
+      <DependentUpon>AdultPatientBehavior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\BaseMorbidityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\BaseMorbidityControl.Designer.cs">
+      <DependentUpon>BaseMorbidityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\CalculateForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\CalculateForm.Designer.cs">
+      <DependentUpon>CalculateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMCD4Test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMCD4Test.Designer.cs">
+      <DependentUpon>chartMCD4Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMChemOtherTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMChemOtherTest.Designer.cs">
+      <DependentUpon>chartMChemOtherTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMHematologyTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMHematologyTest.Designer.cs">
+      <DependentUpon>chartMHematologyTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMHIVRapidTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMHIVRapidTest.Designer.cs">
+      <DependentUpon>chartMHIVRapidTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMPatientNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMPatientNo.Designer.cs">
+      <DependentUpon>chartMPatientNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMSupplyForecast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMSupplyForecast.Designer.cs">
+      <DependentUpon>chartMSupplyForecast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMSupplyProcurmentForecast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\chartMSupplyProcurmentForecast.Designer.cs">
+      <DependentUpon>chartMSupplyProcurmentForecast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\CheckupForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\CheckupForm.designer.cs">
+      <DependentUpon>CheckupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\DashboardForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\EverStartedNoData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\EverStartedNoData.Designer.cs">
+      <DependentUpon>EverStartedNoData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\EverStartedOldData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\EverStartedOldData.Designer.cs">
+      <DependentUpon>EverStartedOldData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\EverStartedRecentData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\EverStartedRecentData.Designer.cs">
+      <DependentUpon>EverStartedRecentData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FrmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FrmProgress.Designer.cs">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FromOldData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FromOldData.Designer.cs">
+      <DependentUpon>FromOldData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FromRecentData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FromRecentData.Designer.cs">
+      <DependentUpon>FromRecentData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\InvAssumption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\InvAssumption.designer.cs">
+      <DependentUpon>InvAssumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\LQTCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\LQTCheckBox.Designer.cs">
+      <DependentUpon>LQTCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\MorbidityDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\MorbidityDashboard.Designer.cs">
+      <DependentUpon>MorbidityDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OpEverStartedPatientTarget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OpEverStartedPatientTarget.Designer.cs">
+      <DependentUpon>OpEverStartedPatientTarget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptArtPatientTarget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptArtPatientTarget.Designer.cs">
+      <DependentUpon>OptArtPatientTarget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptPreTreatmentPatientTargets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptPreTreatmentPatientTargets.Designer.cs">
+      <DependentUpon>OptPreTreatmentPatientTargets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptRecentData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptRecentData.Designer.cs">
+      <DependentUpon>OptRecentData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptTreatmentTarget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\OptTreatmentTarget.Designer.cs">
+      <DependentUpon>OptTreatmentTarget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\PatientNumbersSites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\PatientNumbersSites.Designer.cs">
+      <DependentUpon>PatientNumbersSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\PediatricPatientBehavior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\PediatricPatientBehavior.Designer.cs">
+      <DependentUpon>PediatricPatientBehavior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\PreTxNumbersSites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\PreTxNumbersSites.Designer.cs">
+      <DependentUpon>PreTxNumbersSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\ProductQuantityInStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\ProductQuantityInStock.Designer.cs">
+      <DependentUpon>ProductQuantityInStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\RapidTestParallel .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\RapidTestParallel .Designer.cs">
+      <DependentUpon>RapidTestParallel .cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\RapidTestSerial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\RapidTestSerial.Designer.cs">
+      <DependentUpon>RapidTestSerial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\SiteListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\SiteSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\SiteSelection.Designer.cs">
+      <DependentUpon>SiteSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\SiteTargetCalculator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\SiteTargetCalculator.Designer.cs">
+      <DependentUpon>SiteTargetCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\SiteTargetCalculatorPreART.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\SiteTargetCalculatorPreART.Designer.cs">
+      <DependentUpon>SiteTargetCalculatorPreART.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\TestingEfficiency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\TestingEfficiency.Designer.cs">
+      <DependentUpon>TestingEfficiency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\TestingInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\TestingInformation.Designer.cs">
+      <DependentUpon>TestingInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PivotTable.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MorbidityProtocolSetting\FrmProtocol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorbidityProtocolSetting\FrmProtocol.Designer.cs">
+      <DependentUpon>FrmProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quantification\ConsumptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quantification\ConsumptionForm.Designer.cs">
+      <DependentUpon>ConsumptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectSite.Designer.cs">
+      <DependentUpon>FrmSelectSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FrmAssignCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FrmAssignCat.Designer.cs">
+      <DependentUpon>FrmAssignCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FrmImportCPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MorbidityUserCtr\FrmImportCPN.Designer.cs">
+      <DependentUpon>FrmImportCPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quantification\FrmForecastCategoryInstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quantification\FrmForecastCategoryInstrument.Designer.cs">
+      <DependentUpon>FrmForecastCategoryInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quantification\MorbidityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quantification\MorbidityForm.Designer.cs">
+      <DependentUpon>MorbidityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quantification\ServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quantification\ServiceForm.Designer.cs">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quantification\FrmSearchQuantification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quantification\FrmSearchQuantification.Designer.cs">
+      <DependentUpon>FrmSearchQuantification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForecastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForecastForm.Designer.cs">
+      <DependentUpon>ForecastForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBorwser\FrmReportBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBorwser\FrmReportBrowser.Designer.cs">
+      <DependentUpon>FrmReportBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBorwser\FrmReportLoader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBorwser\FrmReportLoader.Designer.cs">
+      <DependentUpon>FrmReportLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBorwser\FrmReportParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBorwser\FrmReportParameter.Designer.cs">
+      <DependentUpon>FrmReportParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBorwser\frmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBorwser\frmReportViewer.Designer.cs">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBManager\Standard.cs" />
+    <Compile Include="ReportParameterUserCtr\ComparisionReportParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\ComparisionReportParam.Designer.cs">
+      <DependentUpon>ComparisionReportParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\InstrumentListParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\InstrumentListParam.Designer.cs">
+      <DependentUpon>InstrumentListParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\MorbidityCostSReportParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\MorbidityCostSReportParam.Designer.cs">
+      <DependentUpon>MorbidityCostSReportParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\MorbidityNoofTestReportParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\MorbidityNoofTestReportParam.Designer.cs">
+      <DependentUpon>MorbidityNoofTestReportParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\MorbidityNoPatientReportParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\MorbidityNoPatientReportParam.Designer.cs">
+      <DependentUpon>MorbidityNoPatientReportParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\ProductListParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\ProductListParam.Designer.cs">
+      <DependentUpon>ProductListParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\ProductUsageParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\ProductUsageParam.Designer.cs">
+      <DependentUpon>ProductUsageParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\RegionListParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\RegionListParam.Designer.cs">
+      <DependentUpon>RegionListParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\RptBaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\RptBaseUserControl.Designer.cs">
+      <DependentUpon>RptBaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\SiteInstrumentListParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\SiteInstrumentListParam.Designer.cs">
+      <DependentUpon>SiteInstrumentListParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\SiteListParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\SiteListParam.Designer.cs">
+      <DependentUpon>SiteListParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\TestListParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportParameterUserCtr\TestListParam.Designer.cs">
+      <DependentUpon>TestListParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SortWrapper.cs" />
+    <Compile Include="Testing\FrmImportProUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\FrmImportProUsage.Designer.cs">
+      <DependentUpon>FrmImportProUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\FrmImportQMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\FrmImportQMenu.Designer.cs">
+      <DependentUpon>FrmImportQMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\FrmImportTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\FrmImportTest.Designer.cs">
+      <DependentUpon>FrmImportTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\FrmMorbidityTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\FrmMorbidityTest.Designer.cs">
+      <DependentUpon>FrmMorbidityTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\FrmSelectPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\FrmSelectPro.Designer.cs">
+      <DependentUpon>FrmSelectPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBManager\SQLInfoEnumerator.cs" />
+    <Compile Include="Tools\Enumeration.cs" />
+    <Compile Include="Tools\frmAdvanceSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\frmAdvanceSetting.designer.cs">
+      <DependentUpon>frmAdvanceSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmDatabaseName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmDatabaseName.designer.cs">
+      <DependentUpon>FrmDatabaseName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmNewDbFromSql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmNewDbFromSql.designer.cs">
+      <DependentUpon>FrmNewDbFromSql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmProgress.Designer.cs">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\RapidTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\RapidTestForm.Designer.cs">
+      <DependentUpon>RapidTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Restart.cs" />
+    <Compile Include="UserCtr\BaseHistoricalData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\BaseHistoricalData.Designer.cs">
+      <DependentUpon>BaseHistoricalData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\CCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\CCategory.Designer.cs">
+      <DependentUpon>CCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\CDataUsage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\CDataUsage.Designer.cs">
+      <DependentUpon>CDataUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartFoercastResultDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartFoercastResultDashboard.Designer.cs">
+      <DependentUpon>chartFoercastResultDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestNumberSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestNumberSummary.Designer.cs">
+      <DependentUpon>chartServiceTestNumberSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartopensites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartopensites.Designer.cs">
+      <DependentUpon>chartopensites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartSiteCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartSiteCategory.Designer.cs">
+      <DependentUpon>chartSiteCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ChartSiteLevelperRegion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ChartSiteLevelperRegion.Designer.cs">
+      <DependentUpon>ChartSiteLevelperRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ChartSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ChartSummary.Designer.cs">
+      <DependentUpon>ChartSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ChartTestperArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ChartTestperArea.Designer.cs">
+      <DependentUpon>ChartTestperArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\comReferalSite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\comReferalSite.Designer.cs">
+      <DependentUpon>comReferalSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestNumberbyduration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestNumberbyduration.Designer.cs">
+      <DependentUpon>chartServiceTestNumberbyduration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartSandCForecast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartSandCForecast.Designer.cs">
+      <DependentUpon>chartSandCForecast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartSandCMovingAvg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartSandCMovingAvg.Designer.cs">
+      <DependentUpon>chartSandCMovingAvg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestCostSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestCostSummary.Designer.cs">
+      <DependentUpon>chartServiceTestCostSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceCostbyduration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceCostbyduration.Designer.cs">
+      <DependentUpon>chartServiceCostbyduration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartUtilization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartUtilization.Designer.cs">
+      <DependentUpon>chartUtilization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartInsCoverage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartInsCoverage.Designer.cs">
+      <DependentUpon>chartInsCoverage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartTestNumberSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartTestNumberSummary.Designer.cs">
+      <DependentUpon>chartTestNumberSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartTestNumberbyduration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartTestNumberbyduration.Designer.cs">
+      <DependentUpon>chartTestNumberbyduration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartTestCost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartTestCost.Designer.cs">
+      <DependentUpon>chartTestCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartTestCostbyduration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartTestCostbyduration.Designer.cs">
+      <DependentUpon>chartTestCostbyduration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartServiceTestNumber.Designer.cs">
+      <DependentUpon>chartServiceTestNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartForecastTestNumberbyduration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartForecastTestNumberbyduration.Designer.cs">
+      <DependentUpon>chartForecastTestNumberbyduration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartForecastTestCost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartForecastTestCost.Designer.cs">
+      <DependentUpon>chartForecastTestCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartForecastTestCostbyduration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartForecastTestCostbyduration.Designer.cs">
+      <DependentUpon>chartForecastTestCostbyduration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartHistoricalUtilization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartHistoricalUtilization.Designer.cs">
+      <DependentUpon>chartHistoricalUtilization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\chartInstrumentDistribution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\chartInstrumentDistribution.Designer.cs">
+      <DependentUpon>chartInstrumentDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListSiteCatPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListSiteCatPane.Designer.cs">
+      <DependentUpon>ListSiteCatPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListSupplyListPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListSupplyListPane.Designer.cs">
+      <DependentUpon>ListSupplyListPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\DashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListMorbidityPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListMorbidityPane.Designer.cs">
+      <DependentUpon>ListMorbidityPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListMorbidityTestPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListMorbidityTestPane.Designer.cs">
+      <DependentUpon>ListMorbidityTestPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListProductPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListProductPane.Designer.cs">
+      <DependentUpon>ListProductPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListProtocolPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListProtocolPane.Designer.cs">
+      <DependentUpon>ListProtocolPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListReport.Designer.cs">
+      <DependentUpon>ListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ProductNoperCat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ProductNoperCat.Designer.cs">
+      <DependentUpon>ProductNoperCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ServiceQChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ServiceQChart.Designer.cs">
+      <DependentUpon>ServiceQChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\SReported.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\SReported.Designer.cs">
+      <DependentUpon>SReported.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\SCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\SCategory.Designer.cs">
+      <DependentUpon>SCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\SDataUsage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\SDataUsage.Designer.cs">
+      <DependentUpon>SDataUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\CReported.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\CReported.Designer.cs">
+      <DependentUpon>CReported.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListConsumptionPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListConsumptionPane.Designer.cs">
+      <DependentUpon>ListConsumptionPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListInstrumentPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListInstrumentPane.Designer.cs">
+      <DependentUpon>ListInstrumentPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListProductTypePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListProductTypePane.Designer.cs">
+      <DependentUpon>ListProductTypePane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListRegionPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListRegionPane.Designer.cs">
+      <DependentUpon>ListRegionPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListSitePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListSitePane.Designer.cs">
+      <DependentUpon>ListSitePane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListTestingGroupPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListTestingGroupPane.Designer.cs">
+      <DependentUpon>ListTestingGroupPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListTestPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListTestPane.Designer.cs">
+      <DependentUpon>ListTestPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\LogPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\LogPane.Designer.cs">
+      <DependentUpon>LogPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\LqtToolStrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\LqtToolStrip.Designer.cs">
+      <DependentUpon>LqtToolStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\TestFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\TestFrom.Designer.cs">
+      <DependentUpon>TestFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\TestingAreaFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\TestingAreaFrom.Designer.cs">
+      <DependentUpon>TestingAreaFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Testing\TestingGroupFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\TestingGroupFrom.Designer.cs">
+      <DependentUpon>TestingGroupFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ListTestingAreaPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ListTestingAreaPane.Designer.cs">
+      <DependentUpon>ListTestingAreaPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtr\ChartSiteperRegion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtr\ChartSiteperRegion.Designer.cs">
+      <DependentUpon>ChartSiteperRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomedChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZoomedChart.Designer.cs">
+      <DependentUpon>ZoomedChart.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset\FrmAssignTestingArea.resx">
+      <DependentUpon>FrmAssignTestingArea.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset\FrmImportIns.resx">
+      <DependentUpon>FrmImportIns.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset\FrmImportPro.resx">
+      <DependentUpon>FrmImportPro.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset\FrmSearchProduct.resx">
+      <DependentUpon>FrmSearchProduct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset\InstrumentForm.resx">
+      <DependentUpon>InstrumentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asset\ProductTypeForm.resx">
+      <DependentUpon>ProductTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\CustomToolTip.resx">
+      <DependentUpon>CustomToolTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\ImageButton.resx">
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DurationPicker.resx">
+      <DependentUpon>DurationPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFillterSite.resx">
+      <DependentUpon>FrmFillterSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmForecastResult.resx">
+      <DependentUpon>FrmForecastResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInput.resx">
+      <DependentUpon>FrmInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMorbiditySupplyForecastAdj.resx">
+      <DependentUpon>FrmMorbiditySupplyForecastAdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMselectCon.resx">
+      <DependentUpon>FrmMselectCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMselectTest.resx">
+      <DependentUpon>FrmMselectTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPickProducts.resx">
+      <DependentUpon>FrmPickProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPriceinput.resx">
+      <DependentUpon>FrmPriceinput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportedPeriod.resx">
+      <DependentUpon>FrmReportedPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectInstrument.resx">
+      <DependentUpon>FrmSelectInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectSheet.resx">
+      <DependentUpon>FrmSelectSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectTest.resx">
+      <DependentUpon>FrmSelectTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectProduct.resx">
+      <DependentUpon>FrmSelectProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectTestArea.resx">
+      <DependentUpon>FrmSelectTestArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowError.resx">
+      <DependentUpon>FrmShowError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportConForm.resx">
+      <DependentUpon>ImportConForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportSerForm.resx">
+      <DependentUpon>ImportSerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\FrmImportRefSite.resx">
+      <DependentUpon>FrmImportRefSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\FrmImportRegion.resx">
+      <DependentUpon>FrmImportRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\FrmImportSite.resx">
+      <DependentUpon>FrmImportSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\FrmImportSiteInstrument.resx">
+      <DependentUpon>FrmImportSiteInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\FrmReferalSite.resx">
+      <DependentUpon>FrmReferalSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\FrmSearchSite.resx">
+      <DependentUpon>FrmSearchSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\FrmSiteCat.resx">
+      <DependentUpon>FrmSiteCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\RegionForm.resx">
+      <DependentUpon>RegionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\SiteCategoryForm.resx">
+      <DependentUpon>SiteCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Location\SiteForm.resx">
+      <DependentUpon>SiteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LqtDialogForm.resx">
+      <DependentUpon>LqtDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LqtMainWindowForm.resx">
+      <DependentUpon>LqtMainWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityProtocolSetting\FrmPanel.resx">
+      <DependentUpon>FrmPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\AdultPatientBehavior.resx">
+      <DependentUpon>AdultPatientBehavior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\BaseMorbidityControl.resx">
+      <DependentUpon>BaseMorbidityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\CalculateForm.resx">
+      <DependentUpon>CalculateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\chartMCD4Test.resx">
+      <DependentUpon>chartMCD4Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\chartMChemOtherTest.resx">
+      <DependentUpon>chartMChemOtherTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\chartMHematologyTest.resx">
+      <DependentUpon>chartMHematologyTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\chartMHIVRapidTest.resx">
+      <DependentUpon>chartMHIVRapidTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\chartMPatientNo.resx">
+      <DependentUpon>chartMPatientNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\chartMSupplyForecast.resx">
+      <DependentUpon>chartMSupplyForecast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\chartMSupplyProcurmentForecast.resx">
+      <DependentUpon>chartMSupplyProcurmentForecast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\CheckupForm.resx">
+      <DependentUpon>CheckupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\EverStartedNoData.resx">
+      <DependentUpon>EverStartedNoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\EverStartedOldData.resx">
+      <DependentUpon>EverStartedOldData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\EverStartedRecentData.resx">
+      <DependentUpon>EverStartedRecentData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\FrmProgress.resx">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\FromOldData.resx">
+      <DependentUpon>FromOldData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\FromRecentData.resx">
+      <DependentUpon>FromRecentData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\InvAssumption.resx">
+      <DependentUpon>InvAssumption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\LQTCheckBox.resx">
+      <DependentUpon>LQTCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\MorbidityDashboard.resx">
+      <DependentUpon>MorbidityDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\OpEverStartedPatientTarget.resx">
+      <DependentUpon>OpEverStartedPatientTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\OptArtPatientTarget.resx">
+      <DependentUpon>OptArtPatientTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\OptPreTreatmentPatientTargets.resx">
+      <DependentUpon>OptPreTreatmentPatientTargets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\OptRecentData.resx">
+      <DependentUpon>OptRecentData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\OptTreatmentTarget.resx">
+      <DependentUpon>OptTreatmentTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\PatientNumbersSites.resx">
+      <DependentUpon>PatientNumbersSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\PediatricPatientBehavior.resx">
+      <DependentUpon>PediatricPatientBehavior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\ProductQuantityInStock.resx">
+      <DependentUpon>ProductQuantityInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\RapidTestParallel .resx">
+      <DependentUpon>RapidTestParallel .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\RapidTestSerial.resx">
+      <DependentUpon>RapidTestSerial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\SiteListView.resx">
+      <DependentUpon>SiteListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\SiteSelection.resx">
+      <DependentUpon>SiteSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\SiteTargetCalculator.resx">
+      <DependentUpon>SiteTargetCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\SiteTargetCalculatorPreART.resx">
+      <DependentUpon>SiteTargetCalculatorPreART.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\TestingEfficiency.resx">
+      <DependentUpon>TestingEfficiency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\TestingInformation.resx">
+      <DependentUpon>TestingInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="MorbidityProtocolSetting\FrmProtocol.resx">
+      <DependentUpon>FrmProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quantification\ConsumptionForm.resx">
+      <DependentUpon>ConsumptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectSite.resx">
+      <DependentUpon>FrmSelectSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\FrmAssignCat.resx">
+      <DependentUpon>FrmAssignCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MorbidityUserCtr\FrmImportCPN.resx">
+      <DependentUpon>FrmImportCPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quantification\FrmForecastCategoryInstrument.resx">
+      <DependentUpon>FrmForecastCategoryInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quantification\MorbidityForm.resx">
+      <DependentUpon>MorbidityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quantification\ServiceForm.resx">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quantification\FrmSearchQuantification.resx">
+      <DependentUpon>FrmSearchQuantification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForecastForm.resx">
+      <DependentUpon>ForecastForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBorwser\FrmReportBrowser.resx">
+      <DependentUpon>FrmReportBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBorwser\FrmReportLoader.resx">
+      <DependentUpon>FrmReportLoader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBorwser\FrmReportParameter.resx">
+      <DependentUpon>FrmReportParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBorwser\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\ComparisionReportParam.resx">
+      <DependentUpon>ComparisionReportParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\InstrumentListParam.resx">
+      <DependentUpon>InstrumentListParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\MorbidityCostSReportParam.resx">
+      <DependentUpon>MorbidityCostSReportParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\MorbidityNoofTestReportParam.resx">
+      <DependentUpon>MorbidityNoofTestReportParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\MorbidityNoPatientReportParam.resx">
+      <DependentUpon>MorbidityNoPatientReportParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\ProductListParam.resx">
+      <DependentUpon>ProductListParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\ProductUsageParam.resx">
+      <DependentUpon>ProductUsageParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\RegionListParam.resx">
+      <DependentUpon>RegionListParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\SiteInstrumentListParam.resx">
+      <DependentUpon>SiteInstrumentListParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\SiteListParam.resx">
+      <DependentUpon>SiteListParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportParameterUserCtr\TestListParam.resx">
+      <DependentUpon>TestListParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CD4TestNumberForecast.rdlc" />
+    <EmbeddedResource Include="Reports\ChemistryNumberofTestForecast.rdlc" />
+    <EmbeddedResource Include="Reports\Dforcastcostsummary.rdlc" />
+    <EmbeddedResource Include="Reports\forcastpatientsummarywithgraph.rdlc" />
+    <EmbeddedResource Include="Reports\forecastcomparision.rdlc" />
+    <EmbeddedResource Include="Reports\Forecastresulttestbyregion.rdlc" />
+    <EmbeddedResource Include="Reports\FullQSummary.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HemaandViralTestNumberForecast.rdlc" />
+    <EmbeddedResource Include="Reports\MorbiditySupplyForecast.rdlc" />
+    <EmbeddedResource Include="Reports\MorbiditySupplyProcurement.rdlc" />
+    <EmbeddedResource Include="Reports\PatientNumberForecast.rdlc" />
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\rptConsumptionCostSummary.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptInstrumentList.rdlc" />
+    <EmbeddedResource Include="Reports\rptInstrumentListwithControlTdays.rdlc" />
+    <EmbeddedResource Include="Reports\rptProductList.rdlc" />
+    <EmbeddedResource Include="Reports\rptProductPriceList.rdlc" />
+    <EmbeddedResource Include="Reports\rptProductUsageList.rdlc" />
+    <EmbeddedResource Include="Reports\rptRegion.rdlc" />
+    <EmbeddedResource Include="Reports\rptRegionWithSiteCount.rdlc" />
+    <EmbeddedResource Include="Reports\rptServiceCostSummary.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptSite.rdlc" />
+    <EmbeddedResource Include="Reports\rptSiteInstrumentList.rdlc" />
+    <EmbeddedResource Include="Reports\rptSitewithworkingdays.rdlc" />
+    <EmbeddedResource Include="Reports\rptTestList.rdlc" />
+    <EmbeddedResource Include="Reports\sandcsummary.rdlc" />
+    <EmbeddedResource Include="Reports\ServiceQSummary.rdlc" />
+    <EmbeddedResource Include="Testing\FrmImportProUsage.resx">
+      <DependentUpon>FrmImportProUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\FrmImportQMenu.resx">
+      <DependentUpon>FrmImportQMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\FrmImportTest.resx">
+      <DependentUpon>FrmImportTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\FrmMorbidityTest.resx">
+      <DependentUpon>FrmMorbidityTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\FrmSelectPro.resx">
+      <DependentUpon>FrmSelectPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\TestFrom.resx">
+      <DependentUpon>TestFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\TestingAreaFrom.resx">
+      <DependentUpon>TestingAreaFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\TestingGroupFrom.resx">
+      <DependentUpon>TestingGroupFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\frmAdvanceSetting.resx">
+      <DependentUpon>frmAdvanceSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmDatabaseName.resx">
+      <DependentUpon>FrmDatabaseName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmNewDbFromSql.resx">
+      <DependentUpon>FrmNewDbFromSql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmProgress.resx">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\RapidTestForm.resx">
+      <DependentUpon>RapidTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\BaseHistoricalData.resx">
+      <DependentUpon>BaseHistoricalData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\CCategory.resx">
+      <DependentUpon>CCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\CDataUsage.resx">
+      <DependentUpon>CDataUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartFoercastResultDashboard.resx">
+      <DependentUpon>chartFoercastResultDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartServiceTestNumberSummary.resx">
+      <DependentUpon>chartServiceTestNumberSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartopensites.resx">
+      <DependentUpon>chartopensites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartSiteCategory.resx">
+      <DependentUpon>chartSiteCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ChartSiteLevelperRegion.resx">
+      <DependentUpon>ChartSiteLevelperRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ChartSummary.resx">
+      <DependentUpon>ChartSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ChartTestperArea.resx">
+      <DependentUpon>ChartTestperArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\comReferalSite.resx">
+      <DependentUpon>comReferalSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartServiceTestNumberbyduration.resx">
+      <DependentUpon>chartServiceTestNumberbyduration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartSandCForecast.resx">
+      <DependentUpon>chartSandCForecast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartSandCMovingAvg.resx">
+      <DependentUpon>chartSandCMovingAvg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartServiceTestCostSummary.resx">
+      <DependentUpon>chartServiceTestCostSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartServiceCostbyduration.resx">
+      <DependentUpon>chartServiceCostbyduration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartUtilization.resx">
+      <DependentUpon>chartUtilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartInsCoverage.resx">
+      <DependentUpon>chartInsCoverage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartTestNumberSummary.resx">
+      <DependentUpon>chartTestNumberSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartTestNumberbyduration.resx">
+      <DependentUpon>chartTestNumberbyduration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartTestCost.resx">
+      <DependentUpon>chartTestCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartTestCostbyduration.resx">
+      <DependentUpon>chartTestCostbyduration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartServiceTestNumber.resx">
+      <DependentUpon>chartServiceTestNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartForecastTestNumberbyduration.resx">
+      <DependentUpon>chartForecastTestNumberbyduration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartForecastTestCost.resx">
+      <DependentUpon>chartForecastTestCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartForecastTestCostbyduration.resx">
+      <DependentUpon>chartForecastTestCostbyduration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartHistoricalUtilization.resx">
+      <DependentUpon>chartHistoricalUtilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\chartInstrumentDistribution.resx">
+      <DependentUpon>chartInstrumentDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListSiteCatPane.resx">
+      <DependentUpon>ListSiteCatPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListProtocolPane.resx">
+      <DependentUpon>ListProtocolPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListSupplyListPane.resx">
+      <DependentUpon>ListSupplyListPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListMorbidityPane.resx">
+      <DependentUpon>ListMorbidityPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListMorbidityTestPane.resx">
+      <DependentUpon>ListMorbidityTestPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListProductPane.resx">
+      <DependentUpon>ListProductPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListReport.resx">
+      <DependentUpon>ListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ProductNoperCat.resx">
+      <DependentUpon>ProductNoperCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ServiceQChart.resx">
+      <DependentUpon>ServiceQChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\SReported.resx">
+      <DependentUpon>SReported.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\SCategory.resx">
+      <DependentUpon>SCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\SDataUsage.resx">
+      <DependentUpon>SDataUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\CReported.resx">
+      <DependentUpon>CReported.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListConsumptionPane.resx">
+      <DependentUpon>ListConsumptionPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListInstrumentPane.resx">
+      <DependentUpon>ListInstrumentPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListProductTypePane.resx">
+      <DependentUpon>ListProductTypePane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListRegionPane.resx">
+      <DependentUpon>ListRegionPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListSitePane.resx">
+      <DependentUpon>ListSitePane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListTestingAreaPane.resx">
+      <DependentUpon>ListTestingAreaPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListTestingGroupPane.resx">
+      <DependentUpon>ListTestingGroupPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ListTestPane.resx">
+      <DependentUpon>ListTestPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\LogPane.resx">
+      <DependentUpon>LogPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\LqtToolStrip.resx">
+      <DependentUpon>LqtToolStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtr\ChartSiteperRegion.resx">
+      <DependentUpon>ChartSiteperRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZoomedChart.resx">
+      <DependentUpon>ZoomedChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <EmbeddedResource Include="Resources\ForLAB.chm" />
+    <None Include="Resources\quantification_export.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LQT.Core\LQT.Core.csproj">
+      <Project>{931704FC-F588-42BE-905A-B72B0141F7A0}</Project>
+      <Name>LQT.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <None Include="Resources\go-first.png" />
+    <None Include="Resources\go-last.png" />
+    <None Include="Resources\go-next.png" />
+    <None Include="Resources\go-previous.png" />
+    <Content Include="Resources\MOHCW ART Sept 2007-Aug 2009.xml" />
+    <EmbeddedResource Include="Resources\ImportTemplate.xls" />
+    <EmbeddedResource Include="Resources\up.png" />
+    <EmbeddedResource Include="Resources\down.png" />
+    <EmbeddedResource Include="Morbidity.htm" />
+    <Content Include="Reports\Reports.Icono\chk_checked.png" />
+    <Content Include="Reports\Reports.Icono\chk_unchecked.png" />
+    <Content Include="Reports\Reports.Icono\report.jpg" />
+    <EmbeddedResource Include="Resources\about lqt.jpg" />
+    <EmbeddedResource Include="Resources\background.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist  "$(TargetDir)Update" md  "$(TargetDir)Update"
+if not exist  "$(TargetDir)Reports" md  "$(TargetDir)Reports"
+if not exist  "$(TargetDir)Template" md  "$(TargetDir)Export"
+if not exist  "$(TargetDir)Backup" md  "$(TargetDir)Backup"
+
+xcopy "$(SolutionDir)*.ico" "$(TargetDir)"  /y
+
+xcopy "$(SolutionDir)LQT.GUI\Reports\*.rdlc" "$(TargetDir)Reports" /s  /y
+xcopy "$(SolutionDir)LQT.GUI\Reports\*.png" "$(TargetDir)Reports" /s  /e /y
+xcopy "$(SolutionDir)LQT.GUI\Reports\*.jpg" "$(TargetDir)Reports" /s  /e /y
+
+xcopy "$(SolutionDir)Sql\*.sql" "$(TargetDir)Update" /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

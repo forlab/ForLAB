@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.Test, LQT.Core" table="Test">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="TestID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="TestName" type="String">
+			<column name="TestName" length="64" sql-type="nvarchar" not-null="true"/>
+		</property>
+    <property name="TestType" type="String">
+      <column name="TestType" length="50" sql-type="nvarchar" />
+    </property>
+    <property name="TestingDuration" type="String">
+      <column name="TestingDuration" length="50" sql-type="nvarchar" />
+    </property>
+		
+		<many-to-one name="TestingArea" class="LQT.Core.Domain.TestingArea, LQT.Core">
+			<column name="TestingAreaID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		
+		<many-to-one name="TestingGroup" class="LQT.Core.Domain.TestingGroup, LQT.Core">
+			<column name="TestingGroupID" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+
+    <bag name="ProductUsages" lazy="true" cascade="all" table="ProductUsage">
+      <key column="TestID"/>
+      <composite-element class="LQT.Core.Domain.ProductUsage, LQT.Core" >
+        <parent name="Test" />
+        <property name="ProductUsedIn" type="String" column="ProductUsedIn" />
+        <property name="Rate" type="Decimal" column="Rate" not-null="true"/>
+        <many-to-one name="Product" class="LQT.Core.Domain.MasterProduct, LQT.Core" column="ProductId" cascade="none" />
+        <many-to-one name="Instrument" class="LQT.Core.Domain.Instrument, LQT.Core" column="InstrumentId" cascade="none"/>
+      </composite-element>
+    </bag>
+	</class>
+</hibernate-mapping>

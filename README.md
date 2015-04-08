@@ -48,8 +48,12 @@ Want to get more familiar with what's going on in the code?
 
 You are also encouraged to start a discussion by filing an issue or creating a gist.
 
-##Components
+##Found a bug?
+Another way you can contribute to ForLAB is by providing issue reports, for information on how to submit an issue report refer to our [online guide for reporting issues.](https://github.com/forlab/ForLAB/)
 
+To view existing issues please visit [https://github.com/forlab/ForLAB/issues](https://github.com/forlab/ForLAB/issues)
+
+##Components
 
 ##License
 ForLAB is licensed under the ****.

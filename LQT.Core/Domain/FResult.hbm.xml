@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.FResult, LQT.Core" table="FResult">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="Instance" type="Int32">
+			<column name="Instance" length="4" sql-type="int" not-null="true"/>
+		</property>
+		<property name="Forecast" type="Decimal">
+			<column name="Forecast" length="9" sql-type="decimal" not-null="true"/>
+		</property>
+		<property name="Duration" type="String">
+			<column name="Duration" length="24" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Cost" type="Decimal">
+			<column name="Cost" length="9" sql-type="decimal" not-null="false"/>
+		</property>
+		
+		<many-to-one name="FTable" class="LQT.Core.Domain.FTable, LQT.Core">
+			<column name="FTableId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		
+		
+	</class>
+</hibernate-mapping>

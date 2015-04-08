@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.CD4TestNumber, LQT.Core" table="CD4TestNumber">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true"/>
+			<generator class="native" />
+		</id>
+		<property name="ForecastId" type="Int32">
+			<column name="ForecastId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="SiteId" type="Int32">
+			<column name="SiteId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="ExistingPIT" type="Double">
+			<column name="ExistingPIT" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="ExistingPIPreART" type="Double">
+			<column name="ExistingPIPreART" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="CD4BaseLineTest" type="Double">
+			<column name="CD4BaseLineTest" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="NewPatienttoTreatment" type="Double">
+			<column name="NewPatienttoTreatment" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="NewPatientstoPreART" type="Double">
+			<column name="NewPatientstoPreART" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="SymptomDirectedTest" type="Double">
+			<column name="SymptomDirectedTest" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="RepeatsdutoClinicalRequest" type="Double">
+			<column name="RepeatsdutoClinicalRequest" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="Wastage" type="Double">
+			<column name="Wastage" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="ReagentstoRunControls" type="Double">
+			<column name="ReagentstoRunControls" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="BufferStockandControls" type="Double">
+			<column name="BufferStockandControls" length="8" sql-type="float" not-null="false"/>
+		</property>
+	</class>
+</hibernate-mapping>
+

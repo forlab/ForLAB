@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.Protocol, LQT.Core" table="Protocol">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_Protocol"/>
+			<generator class="native" />
+		</id>
+		<property name="ProtocolType" type="Int32">
+			<column name="ProtocolType" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="TestReapeated" type="Double">
+			<column name="TestReapeated" length="8" sql-type="float" not-null="false"/>
+		</property>
+		<property name="SymptomDirectedAmt" type="Double">
+			<column name="SymptomDirectedAmt" length="8" sql-type="float" not-null="false"/>
+		</property>
+    <property name="Descritpion" type="String">
+      <column name="Descritpion" length="500" sql-type="nvarchar" not-null="false"/>
+    </property>
+		
+    <bag name="ProtocolPanels" inverse="true" lazy="true"  cascade="all-delete-orphan">
+			<key column="ProtocolId"/>
+			<one-to-many class="LQT.Core.Domain.ProtocolPanel, LQT.Core"/>
+		</bag>
+    
+		<bag name="SymptomDirectedTests" inverse="true" lazy="true"  cascade="all-delete-orphan">
+			<key column="ProtocolId"/>
+			<one-to-many class="LQT.Core.Domain.PSymptomDirectedTest, LQT.Core"/>
+		</bag>
+	</class>
+</hibernate-mapping>

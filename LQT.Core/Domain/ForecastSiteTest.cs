@@ -1,0 +1,95 @@
+
+/*
+ * This program is part of the ForLAB software.
+ * Copyright © 2010 Clinton Health Access Initiative(CHAI) and Supply Chain Management System(SCMS) 
+ *
+ *  This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, version 3 of the License.
+ *
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License along with this program.  If not, see http://www.gnu.org/licenses.
+ */
+
+
+using System;
+using System.Collections;
+using LQT.Core.Util;
+
+namespace LQT.Core.Domain
+{
+	
+	/// <summary>
+	/// ForecastSiteTest object for NHibernate mapped table 'ForecastSiteTest'.
+	/// </summary>
+    public class ForecastSiteTest : BaseDataUsage, IBaseDataUsage, System.IComparable
+	{
+		#region Member Variables
+		
+		
+		private ForecastSite _forecastSite;
+        private static String _sortExpression = "DurationDateTime";
+        private static SortDirection _sortDirection = SortDirection.Descending;
+
+		#endregion
+
+		#region Constructors
+
+		public ForecastSiteTest() 
+		{
+		}
+
+		
+		#endregion
+
+		#region Public Properties
+
+		
+		public virtual ForecastSite ForecastSite
+		{
+			get { return _forecastSite; }
+			set { _forecastSite = value; }
+		}
+
+        public static String SortExpression
+        {
+            get { return _sortExpression; }
+            set { _sortExpression = value; }
+        }
+
+        public static SortDirection SortDirection
+        {
+            get { return _sortDirection; }
+            set { _sortDirection = value; }
+        }
+
+        #endregion
+
+        #region IComparable Methods
+
+        public int CompareTo(object obj)
+        {
+            if (!(obj is ForecastSiteTest))
+                throw new InvalidCastException("This object is not of type ForecastSiteTest");
+
+            int relativeValue;
+            switch (SortExpression)
+            {
+                case "Id":
+                    relativeValue = this.Id.CompareTo(((ForecastSiteTest)obj).Id);
+                    break;
+                case "DurationDateTime":
+                    relativeValue = (this.DurationDateTime != null) ? this.DurationDateTime.Value.CompareTo(((ForecastSiteTest)obj).DurationDateTime) : -1;
+                    break;
+                default:
+                    goto case "Id";
+            }
+            if (ForecastSiteTest.SortDirection == SortDirection.Ascending)
+                relativeValue *= -1;
+            return relativeValue;
+        }
+        #endregion
+		
+       
+	}
+
+}

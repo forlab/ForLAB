@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.QuantificationMetric, LQT.Core" table="QuantificationMetric">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_QuantificationMetric"/>
+			<generator class="native" />
+		</id>
+		<property name="ClassOfTest" type="String">
+			<column name="ClassOfTest" length="16" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="UsageRate" type="Double">
+			<column name="UsageRate" length="8" sql-type="float" not-null="true"/>
+		</property>
+		<property name="CollectionSupplieAppliedTo" type="String">
+			<column name="CollectionSupplieAppliedTo" length="16" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<many-to-one name="Product" class="LQT.Core.Domain.MasterProduct, LQT.Core">
+			<column name="ProductId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="QuantifyMenu" class="LQT.Core.Domain.QuantifyMenu, LQT.Core">
+			<column name="QuantifyMenuId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.ProductType, LQT.Core" table="ProductType">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="TypeID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="TypeName" type="String">
+			<column name="TypeName" length="64" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="Description" type="String">
+			<column name="Description" length="256" sql-type="nvarchar" not-null="false"/>
+		</property>
+    <property name="UseInDemography" type="Boolean">
+      <column name="UseInDemography" sql-type="bit"/>
+    </property>
+    <property name="ClassOfTest" type="String">
+      <column name="ClassOfTest" length="32" sql-type="nvarchar" not-null="false"/>
+    </property>
+		<bag name="Products" lazy="true" cascade="delete" inverse="true">
+			<key column="ProductTypeId"/>
+			<one-to-many class="LQT.Core.Domain.MasterProduct, LQT.Core"/>
+		</bag>
+	</class>
+</hibernate-mapping>

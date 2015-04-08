@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.PanelTest, LQT.Core" table="PanelTest">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_PanelTest"/>
+			<generator class="native" />
+		</id>
+    
+    <property name="ChemTestName" type="String">
+      <column name="ChemTestName" length="32" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="OtherTestName" type="String">
+      <column name="OtherTestName" length="32" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <many-to-one name="Panel" class="LQT.Core.Domain.ProtocolPanel, LQT.Core">
+			<column name="PanelId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="TestId" class="LQT.Core.Domain.Test, LQT.Core">
+			<column name="TestId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

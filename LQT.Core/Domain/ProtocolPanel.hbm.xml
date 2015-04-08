@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.ProtocolPanel, LQT.Core" table="ProtocolPanel">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_ProtocolPanel"/>
+			<generator class="native" />
+		</id>
+		<property name="PanelName" type="String">
+			<column name="PanelName" length="100" sql-type="nvarchar" not-null="false"/>
+		</property>
+    <property name="AITNewPatient" type="Double">
+      <column name="AITNewPatient" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AITPreExisting" type="Double">
+      <column name="AITPreExisting" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AITTestperYear" type="Double">
+      <column name="AITTestperYear" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="AITMonth1" type="Int32">
+      <column name="AITMonth1" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth2" type="Int32">
+      <column name="AITMonth2" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth3" type="Int32">
+      <column name="AITMonth3" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth4" type="Int32">
+      <column name="AITMonth4" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth5" type="Int32">
+      <column name="AITMonth5" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth6" type="Int32">
+      <column name="AITMonth6" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth7" type="Int32">
+      <column name="AITMonth7" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth8" type="Int32">
+      <column name="AITMonth8" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth9" type="Int32">
+      <column name="AITMonth9" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth10" type="Int32">
+      <column name="AITMonth10" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth11" type="Int32">
+      <column name="AITMonth11" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AITMonth12" type="Int32">
+      <column name="AITMonth12" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITNewPatient" type="Double">
+      <column name="PITNewPatient" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PITPreExisting" type="Double">
+      <column name="PITPreExisting" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PITTestperYear" type="Double">
+      <column name="PITTestperYear" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PITMonth1" type="Int32">
+      <column name="PITMonth1" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth2" type="Int32">
+      <column name="PITMonth2" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth3" type="Int32">
+      <column name="PITMonth3" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth4" type="Int32">
+      <column name="PITMonth4" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth5" type="Int32">
+      <column name="PITMonth5" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth6" type="Int32">
+      <column name="PITMonth6" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth7" type="Int32">
+      <column name="PITMonth7" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth8" type="Int32">
+      <column name="PITMonth8" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth9" type="Int32">
+      <column name="PITMonth9" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth10" type="Int32">
+      <column name="PITMonth10" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth11" type="Int32">
+      <column name="PITMonth11" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PITMonth12" type="Int32">
+      <column name="PITMonth12" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTNewPatient" type="Double">
+      <column name="APARTNewPatient" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="APARTPreExisting" type="Double">
+      <column name="APARTPreExisting" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="APARTestperYear" type="Double">
+      <column name="APARTestperYear" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="APARTMonth1" type="Int32">
+      <column name="APARTMonth1" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth2" type="Int32">
+      <column name="APARTMonth2" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth3" type="Int32">
+      <column name="APARTMonth3" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth4" type="Int32">
+      <column name="APARTMonth4" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth5" type="Int32">
+      <column name="APARTMonth5" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth6" type="Int32">
+      <column name="APARTMonth6" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth7" type="Int32">
+      <column name="APARTMonth7" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth8" type="Int32">
+      <column name="APARTMonth8" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth9" type="Int32">
+      <column name="APARTMonth9" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth10" type="Int32">
+      <column name="APARTMonth10" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth11" type="Int32">
+      <column name="APARTMonth11" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="APARTMonth12" type="Int32">
+      <column name="APARTMonth12" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTNewPatient" type="Double">
+      <column name="PPARTNewPatient" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PPARTPreExisting" type="Double">
+      <column name="PPARTPreExisting" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PPARTTestperYear" type="Double">
+      <column name="PPARTTestperYear" length="8" sql-type="float" not-null="false"/>
+    </property>
+    <property name="PPARTMonth1" type="Int32">
+      <column name="PPARTMonth1" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth2" type="Int32">
+      <column name="PPARTMonth2" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth3" type="Int32">
+      <column name="PPARTMonth3" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth4" type="Int32">
+      <column name="PPARTMonth4" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth5" type="Int32">
+      <column name="PPARTMonth5" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth6" type="Int32">
+      <column name="PPARTMonth6" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth7" type="Int32">
+      <column name="PPARTMonth7" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth8" type="Int32">
+      <column name="PPARTMonth8" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth9" type="Int32">
+      <column name="PPARTMonth9" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth10" type="Int32">
+      <column name="PPARTMonth10" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth11" type="Int32">
+      <column name="PPARTMonth11" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PPARTMonth12" type="Int32">
+      <column name="PPARTMonth12" length="4" sql-type="int" not-null="false"/>
+    </property>
+		<many-to-one name="Protocol" class="LQT.Core.Domain.Protocol, LQT.Core">
+			<column name="ProtocolId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+    
+		<bag name="PanelTests" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key column="PanelId"/>
+			<one-to-many class="LQT.Core.Domain.PanelTest, LQT.Core"/>
+		</bag>
+	</class>
+</hibernate-mapping>

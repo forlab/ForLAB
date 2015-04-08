@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LQT.Core.Domain.MasterConsumable, LQT.Core" table="MasterConsumable">
+    <id name="Id" type="Int32" unsaved-value="-1">
+      <column name="MasterCID" length="4" sql-type="int"/>
+      <generator class="native" />
+    </id>
+    <many-to-one name="TestingArea" class="LQT.Core.Domain.TestingArea, LQT.Core">
+      <column name="TestingAreaId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Test" class="LQT.Core.Domain.Test, LQT.Core">
+      <column name="TestId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+
+    <bag name="ConsumableUsages" lazy="true" cascade="all" table="ConsumableUsage">
+      <key column="ConsumableId"/>
+      <composite-element class="LQT.Core.Domain.ConsumableUsage,LQT.Core">
+        <parent name="MasterConsumable"/>
+        <property name="PerTest" type="Boolean" column="PerTest" />
+        <property name="PerPeriod" type="Boolean" column="PerPeriod" />
+        <property name="PerInstrument" type="Boolean" column="PerInstrument" />
+        <property name="NoOfTest" type="int" column="NoOfTest"/>
+        
+        <many-to-one name="Product" class="LQT.Core.Domain.MasterProduct, LQT.Core" column="ProductId" />
+        <property name="ProductUsageRate" type="Decimal" column="UsageRate"/>
+        <property name="Period" type="string" column="Period"/>
+
+        <many-to-one name="Instrument" class="LQT.Core.Domain.Instrument, LQT.Core" column="InstrumentId"/>
+      </composite-element>
+    </bag>
+
+  </class>
+</hibernate-mapping>

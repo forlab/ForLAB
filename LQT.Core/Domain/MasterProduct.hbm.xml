@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.MasterProduct, LQT.Core" table="MasterProduct">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="ProductID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="ProductName" type="String">
+			<column name="ProductName" length="150" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="SerialNo" type="String">
+			<column name="SerialNo" length="16" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Specification" type="String">
+			<column name="Specification" length="256" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="BasicUnit" type="String">
+			<column name="BasicUnit" length="16" sql-type="nvarchar" not-null="false"/>
+		</property>
+    
+    <property name="ProductNote" type="String">
+			<column name="ProductNote" length="400" sql-type="nvarchar" not-null="false"/>
+		</property>
+    <property name="MinimumPackSize" type="Int32">
+      <column name="MinimumPackPerSite" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="RapidTestGroup" type="String">
+      <column name="RapidTestGroup" length="32" sql-type="nvarchar" not-null="false"/>
+    </property>
+ 
+		<many-to-one name="ProductType" class="LQT.Core.Domain.ProductType, LQT.Core" cascade="none">
+			<column name="ProductTypeId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+
+    <bag name="ProductPrices" cascade="save-update" lazy="false" table="ProductPrice">
+      <key column="ProductId" />
+      <composite-element class="LQT.Core.Domain.ProductPrice, LQT.Core" >
+        <parent name="Product" />
+        <property name="Price" type="Decimal" column="Price" not-null="true"/>
+        <property name="PackSize" type="Int32" column="PackSize" not-null="true"/>
+        <property name="FromDate" type="DateTime" column="FromDate" not-null="true"/>
+      </composite-element>
+    </bag>
+	</class>
+</hibernate-mapping>

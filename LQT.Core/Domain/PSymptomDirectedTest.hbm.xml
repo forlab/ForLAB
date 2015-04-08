@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.PSymptomDirectedTest, LQT.Core" table="PSymptomDirectedTest">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_Symptom-DirectedTest"/>
+			<generator class="native" />
+		</id>
+    <property name="ChemTestName" type="String">
+      <column name="ChemTestName" length="32" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="OtherTestName" type="String">
+      <column name="OtherTestName" length="32" sql-type="nvarchar" not-null="false"/>
+    </property>
+		<property name="AdultInTreatmeant" type="Double">
+			<column name="AdultInTreatmeant" length="9" sql-type="decimal" not-null="false"/>
+		</property>
+		<property name="PediatricInTreatmeant" type="Double">
+			<column name="PediatricInTreatmeant" length="9" sql-type="decimal" not-null="false"/>
+		</property>
+		<property name="AdultPreART" type="Double">
+			<column name="AdultPreART" length="9" sql-type="decimal" not-null="false"/>
+		</property>
+		<property name="PediatricPreART" type="Double">
+			<column name="PediatricPreART" length="9" sql-type="decimal" not-null="false"/>
+		</property>
+		<many-to-one name="Protocol" class="LQT.Core.Domain.Protocol, LQT.Core">
+			<column name="ProtocolId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="Test" class="LQT.Core.Domain.Test, LQT.Core">
+			<column name="TestId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

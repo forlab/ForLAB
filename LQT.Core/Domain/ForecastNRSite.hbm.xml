@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.ForecastNRSite, LQT.Core" table="ForecastNRSite">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		
+		<many-to-one name="NReportedSite" class="LQT.Core.Domain.ForlabSite, LQT.Core">
+			<column name="NReportedSiteId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		
+		<many-to-one name="ForecastSite" class="LQT.Core.Domain.ForecastSite, LQT.Core">
+			<column name="ForecastSiteId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		
+		
+	</class>
+</hibernate-mapping>

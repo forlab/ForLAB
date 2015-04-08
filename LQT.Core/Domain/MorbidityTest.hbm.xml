@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.MorbidityTest, LQT.Core" table="MorbidityTest">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_MorbidityTest"/>
+			<generator class="native" />
+		</id>
+		<property name="ClassOfTest" type="String">
+			<column name="ClassOfTest" length="16" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="TestName" type="String">
+			<column name="TestName" length="156" sql-type="nvarchar" not-null="true"/>
+		</property>
+    <property name="TestSpecificationGroup" type="String">
+      <column name="TestSpecificationGroup" length="16" sql-type="nvarchar" not-null="false"/>
+    </property>
+		<many-to-one name="Instrument" class="LQT.Core.Domain.Instrument, LQT.Core">
+			<column name="InstrumentId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+		<bag name="QuantifyMenus" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key column="MorbidityTetsId"/>
+			<one-to-many class="LQT.Core.Domain.QuantifyMenu, LQT.Core"/>
+		</bag>
+	</class>
+</hibernate-mapping>

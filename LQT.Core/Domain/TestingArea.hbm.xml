@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.TestingArea, LQT.Core" table="TestingArea">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="TestingAreaID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="AreaName" type="String">
+			<column name="AreaName" length="64" sql-type="nvarchar" not-null="true"/>
+		</property>
+    <property name="UseInDemography" type="Boolean">
+      <column name="UseInDemography" sql-type="bit"/>
+    </property>
+    <property name="Category" type="String">
+      <column name="Category" length="64" sql-type="nvarchar" />
+    </property>
+
+		<bag name="TestingGroups" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key column="TestingAreaID"/>
+			<one-to-many class="LQT.Core.Domain.TestingGroup, LQT.Core"/>
+		</bag>
+
+	</class>
+</hibernate-mapping>

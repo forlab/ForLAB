@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.Instrument, LQT.Core" table="Instrument">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="InstrumentID" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="InstrumentName" type="String">
+			<column name="InstrumentName" length="64" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="MaxThroughPut" type="Int32">
+			<column name="MaxThroughPut" length="4" sql-type="int" not-null="false"/>
+		</property>
+    <property name="MonthMaxTPut" type="Int32">
+      <column name="MonthMaxTPut" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="DailyCtrlTest" type="Int32">
+      <column name="DailyCtrlTest" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="MaxTestBeforeCtrlTest" type="Int32">
+      <column name="MaxTestBeforeCtrlTest" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="WeeklyCtrlTest" type="Int32">
+      <column name="WeeklyCtrlTest" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="MonthlyCtrlTest" type="Int32">
+      <column name="MonthlyCtrlTest" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="QuarterlyCtrlTest" type="Int32">
+      <column name="QuarterlyCtrlTest" length="4" sql-type="int" not-null="false"/>
+    </property>
+
+    <many-to-one name="TestingArea" class="LQT.Core.Domain.TestingArea, LQT.Core">
+      <column name="TestingAreaID" length="4" sql-type="int" not-null="true"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LQT.Core.Domain.ForecastCategory, LQT.Core" table="ForecastCategory">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="CategoryId" length="4" sql-type="int"/>
+			<generator class="native" />
+		</id>
+		<property name="CategoryName" type="String">
+			<column name="CategoryName" length="32" sql-type="nvarchar" not-null="true"/>
+		</property>
+		
+		<many-to-one name="ForecastInfo" class="LQT.Core.Domain.ForecastInfo, LQT.Core">
+			<column name="ForecastId" length="4" sql-type="int" not-null="true"/>
+		</many-to-one>
+				
+   
+    <bag name="CategorySites" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key column="CategoryID"/>
+      <one-to-many class="LQT.Core.Domain.ForecastCategorySite, LQT.Core"/>
+    </bag>
+    
+    <bag name="CategoryProducts" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key column="CategoryID"/>
+        <one-to-many class="LQT.Core.Domain.ForecastCategoryProduct, LQT.Core"/>
+		</bag>
+
+    <bag name="CategoryTests" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key column="CategoryID"/>
+      <one-to-many class="LQT.Core.Domain.ForecastCategoryTest, LQT.Core"/>
+    </bag>
+	</class>
+</hibernate-mapping>

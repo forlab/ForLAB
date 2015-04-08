@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <?xml-stylesheet type="text/xsl" href="stylesheet.xsl"?>
+  <xs:element name="Export_File">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="File_Header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="System_Name" />
+              <xs:element type="xs:string" name="FileType" />
+              <xs:element type="xs:string" name="dtmDataExported" />
+              <xs:element type="xs:string" name="dtmStart" />
+              <xs:element type="xs:string" name="dtmEnd" />
+              <xs:element type="xs:byte" name="dblDataInterval" />
+              <xs:element type="xs:string" name="SourceName" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Products">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Product" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="strName" />
+                    <xs:element type="xs:string" name="strProductID" />
+                    <xs:element type="xs:string" name="Source" />
+                    <xs:element type="xs:string" name="UserDefined" />
+                    <xs:element type="xs:string" name="ProductGroup" />
+                    <xs:element type="xs:string" name="InnovatorName" />
+                    <xs:element name="BaseUOM">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="LowestUnitQty" />
+                          <xs:element type="xs:string" name="LowestUnitMeasure" />
+                          <xs:element type="xs:byte" name="QuantificationFactor" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Records">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Record" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="strProductID" />
+                    <xs:element type="xs:string" name="dtmPeriod" />
+                    <xs:element type="xs:int" name="lngConsumption" />
+                    <xs:element type="xs:byte" name="lngAdjustments" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

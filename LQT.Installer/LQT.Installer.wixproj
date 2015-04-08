@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{581d151c-8aad-450f-8a48-6fcb273293b1}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>ForLAB Installer</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <SccProjectName>
+    </SccProjectName>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <IncludeSearchPaths>
+    </IncludeSearchPaths>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ForLab.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="License" />
+    <Folder Include="Bitmaps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bitmaps\App.ico" />
+    <Content Include="Bitmaps\background.bmp" />
+    <Content Include="Bitmaps\banner.bmp" />
+    <Content Include="License\LGPL3.rtf" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <ItemGroup>
+    <ProjectReference Include="..\LQT.GUI\LQT.GUI.csproj">
+      <Name>LQT.GUI</Name>
+      <Project>{5e3edddf-e26f-4f19-840d-236f901d39b1}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>	-->
+  <Target Name="AfterBuild">
+    <GenerateBootstrapper ApplicationFile="$(TargetFileName)" ApplicationName="ForLab LQT" BootstrapperItems="@(BootstrapperFile)" ComponentsLocation="Relative" CopyComponents="True" OutputPath="$(OutputPath)" Path="C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>if not exist  "$(ProjectDir)Update" md  "$(ProjectDir)Update"
+if not exist  "$(ProjectDir)Reports" md  "$(ProjectDir)Reports"
+if not exist  "$(ProjectDir)Reports\Reports.Icono" md "$(ProjectDir)Reports\Reports.Icono"
+
+xcopy "$(SolutionDir)LQT.GUI\Reports\%2a.rdlc" "$(ProjectDir)Reports" /y
+xcopy "$(SolutionDir)LQT.GUI\Reports\Reports.Icono\%2a.png" "$(ProjectDir)Reports\Reports.Icono" /y
+xcopy "$(SolutionDir)LQT.GUI\Reports\Reports.Icono\%2a.jpg" "$(ProjectDir)Reports\Reports.Icono" /y
+
+xcopy "$(SolutionDir)Sql\%2a.sql" "$(ProjectDir)Update" /y
+
+xcopy "$(SolutionDir)LQT.GUI\bin\Debug\%2a.dll" "$(ProjectDir)" /y
+xcopy "$(SolutionDir)LQT.GUI\bin\Debug\%2a.exe" "$(ProjectDir)" /y
+xcopy "$(SolutionDir)LQT.GUI\bin\Debug\%2a.config" "$(ProjectDir)" /y
+xcopy "$(SolutionDir)LQT.GUI\bin\Debug\%2a.xml" "$(ProjectDir)" /y</PreBuildEvent>
+  </PropertyGroup>
+</Project>
