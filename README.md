@@ -56,4 +56,4 @@ To view existing issues please visit [https://github.com/forlab/ForLAB/issues](h
 ##Components
 
 ##License
-ForLAB is licensed under the ****.
+ForLAB is licensed under the [Affero GPL (AGPL) v3](LICENSE).
