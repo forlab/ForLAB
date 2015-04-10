@@ -38,13 +38,13 @@ To get started on **Visual Studio 2010:**
 
 Before you contribute, please read through the contributing and developer guides to get an idea of what kinds of pull requests we will or won't accept.
 
-* [Contributing Guide](https://github.com/forlab/ForLAB/)
-* [Developer Guide](https://github.com/forlab/ForLAB/)
+* [Contributing Guide](https://github.com/forlab/ForLAB/wiki/contribution-guide)
+* [Developer Guide](https://github.com/forlab/ForLAB/wiki/developer-guide)
 
 Want to get more familiar with what's going on in the code?
 
-* [Pull requests: Open/Closed](https://github.com/forlab/ForLAB/)
-* [Issues](https://github.com/forlab/ForLAB/)
+* [Pull requests](https://github.com/forlab/ForLAB/pulls): [Open](https://github.com/forlab/ForLAB/pulls?q=is%3Aopen+is%3Apr)/[Closed](https://github.com/forlab/ForLAB/pulls?q=is%3Apr+is%3Aclosed)
+* [Issues](https://github.com/forlab/ForLAB/issues)
 
 You are also encouraged to start a discussion by filing an issue or creating a gist.
 
@@ -52,8 +52,6 @@ You are also encouraged to start a discussion by filing an issue or creating a g
 Another way you can contribute to ForLAB is by providing issue reports, for information on how to submit an issue report refer to our [online guide for reporting issues.](https://github.com/forlab/ForLAB/)
 
 To view existing issues please visit [https://github.com/forlab/ForLAB/issues](https://github.com/forlab/ForLAB/issues)
-
-##Components
 
 ##License
 ForLAB is licensed under the [Affero GPL (AGPL) v3](LICENSE).
