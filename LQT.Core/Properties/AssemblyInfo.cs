@@ -20,9 +20,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("LQT.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Clinton Health Access Initiative(CHAI)")]
 [assembly: AssemblyProduct("LQT.Core")]
-[assembly: AssemblyCopyright("Copyright ©  2011")]
+[assembly: AssemblyCopyright("Copyright © 2010 Clinton Health Access Initiative(CHAI)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

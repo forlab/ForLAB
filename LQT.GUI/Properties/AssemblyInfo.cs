@@ -20,9 +20,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ForLAB")]
 [assembly: AssemblyDescription("Clinical Laboratory Product Quantification Tool")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CHAI, SCMS, and JSI-Deliver")]
+[assembly: AssemblyCompany("Clinton Health Access Initiative(CHAI)")]
 [assembly: AssemblyProduct("ForLAB")]
-[assembly: AssemblyCopyright("CHAI, SCMS, and JSI-Deliver Copyright ©  2011")]
+[assembly: AssemblyCopyright("Copyright © 2010 Clinton Health Access Initiative(CHAI)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
