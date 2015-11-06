@@ -610,15 +610,15 @@ namespace LQT.GUI
             // viewHelpToolStripMenuItem
             // 
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewHelpToolStripMenuItem.Text = "View Help";
             this.viewHelpToolStripMenuItem.Click += new System.EventHandler(this.viewHelpToolStripMenuItem_Click);
             // 
             // aboutLQTToolStripMenuItem
             // 
             this.aboutLQTToolStripMenuItem.Name = "aboutLQTToolStripMenuItem";
-            this.aboutLQTToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.aboutLQTToolStripMenuItem.Text = "About LQT";
+            this.aboutLQTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutLQTToolStripMenuItem.Text = "About ForLab";
             this.aboutLQTToolStripMenuItem.Click += new System.EventHandler(this.aboutLQTToolStripMenuItem_Click);
             // 
             // toolStrip1
@@ -731,9 +731,9 @@ namespace LQT.GUI
             // 
             // mainStatusBarLblInfo
             // 
-            this.mainStatusBarLblInfo.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.mainStatusBarLblInfo.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.mainStatusBarLblInfo.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.mainStatusBarLblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.mainStatusBarLblInfo.Name = "mainStatusBarLblInfo";
@@ -743,9 +743,9 @@ namespace LQT.GUI
             // 
             // mainStatusBarLblDate
             // 
-            this.mainStatusBarLblDate.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.mainStatusBarLblDate.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.mainStatusBarLblDate.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.mainStatusBarLblDate.Image = ((System.Drawing.Image)(resources.GetObject("mainStatusBarLblDate.Image")));
             this.mainStatusBarLblDate.Name = "mainStatusBarLblDate";
@@ -755,9 +755,9 @@ namespace LQT.GUI
             // mainStatusBarLblInfo2
             // 
             this.mainStatusBarLblInfo2.BackColor = System.Drawing.Color.White;
-            this.mainStatusBarLblInfo2.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.mainStatusBarLblInfo2.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.mainStatusBarLblInfo2.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.mainStatusBarLblInfo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.mainStatusBarLblInfo2.ForeColor = System.Drawing.Color.Black;
@@ -766,9 +766,9 @@ namespace LQT.GUI
             // 
             // toolBarLblVersion
             // 
-            this.toolBarLblVersion.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.toolBarLblVersion.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.toolBarLblVersion.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.toolBarLblVersion.Name = "toolBarLblVersion";
             this.toolBarLblVersion.Size = new System.Drawing.Size(4, 20);
@@ -904,8 +904,9 @@ namespace LQT.GUI
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "LqtMainWindowForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ForLAB";
+            this.Text = "ForLab";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.LqtMainWindowForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

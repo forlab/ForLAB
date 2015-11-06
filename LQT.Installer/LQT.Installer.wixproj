@@ -41,6 +41,8 @@
     <Content Include="Bitmaps\App.ico" />
     <Content Include="Bitmaps\background.bmp" />
     <Content Include="Bitmaps\banner.bmp" />
+    <Content Include="Bitmaps\ForLab64.ico" />
+    <Content Include="Bitmaps\ForLablogo.png" />
     <Content Include="License\LGPL3.rtf" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />

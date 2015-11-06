@@ -52,7 +52,7 @@ namespace LQT.GUI
             // 
             this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.progressBar1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.progressBar1.Location = new System.Drawing.Point(174, 218);
+            this.progressBar1.Location = new System.Drawing.Point(174, 315);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(239, 13);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -65,7 +65,7 @@ namespace LQT.GUI
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(173, 234);
+            this.label1.Location = new System.Drawing.Point(173, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 22);
             this.label1.TabIndex = 7;
@@ -85,7 +85,7 @@ namespace LQT.GUI
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(24, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(573, 201);
+            this.pictureBox1.Size = new System.Drawing.Size(573, 298);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -94,7 +94,7 @@ namespace LQT.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 274);
+            this.ClientSize = new System.Drawing.Size(617, 360);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);

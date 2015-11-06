@@ -34,6 +34,10 @@ using LQT.Core;
 using LQT.GUI.ReportBorwser;
 using LQT.GUI.ReportParameterUserCtr;
 using System.Reflection;
+using System.Net.Mail;
+using System.Net;
+using log4net;
+using log4net.Appender;
 
 
 namespace LQT.GUI
@@ -42,7 +46,7 @@ namespace LQT.GUI
     {
         private BaseUserControl _currentUserCtr;
         private RptBaseUserControl _ReportParamUserCtr;
-
+        string path;
         public LqtMainWindowForm()
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -907,12 +911,14 @@ namespace LQT.GUI
 
         private void showHelp()
         {
-            string path = LqtUtil.GetFolderPath(AppSettings.ExportPath);
-            if (!File.Exists(path + "\\ForLAB.chm"))
+            string path = LqtUtil.GetFolderPath(AppSettings.GetUpdatePath);
+            if (!File.Exists(path + "\\ForLabUM.pdf"))
             {
+                //MessageBox.Show(".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 GenerateHelp();
+
             }
-            path = "file://" + Path.Combine(path, "ForLAB.chm");
+            path = "file://" + Path.Combine(path, "ForLabUM.pdf");
 
             Help.ShowHelp(this, path);
         }
@@ -922,9 +928,9 @@ namespace LQT.GUI
             try
             {
 
-                using (FileStream fs = new FileStream(LqtUtil.GetFolderPath(AppSettings.ExportPath) + "\\ForLAB.chm", FileMode.Create))
+                using (FileStream fs = new FileStream(LqtUtil.GetFolderPath(AppSettings.ExportPath) + "\\ForLabUM.pdf", FileMode.Create))
                 {
-                    Stream xstream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LQT.GUI.Resources.ForLAB.chm");
+                    Stream xstream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LQT.GUI.Resources.ForLabUM.pdf");
 
                     byte[] b = new byte[xstream.Length + 1];
                     xstream.Read(b, 0, Convert.ToInt32(xstream.Length));
@@ -951,6 +957,78 @@ namespace LQT.GUI
             frm.ShowDialog();
         
         }
+        #region SendError
+        public  void DoMails()
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += new DoWorkEventHandler(worker_DoWork);
+            worker.WorkerReportsProgress = true;
+            worker.WorkerSupportsCancellation = false;
+            worker.RunWorkerAsync();//passing argument
+        }
 
+        private  void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            DoMail();
+        }
+
+        private  void DoMail()
+        {
+           // MailMessage message;
+            SmtpClient smtp;
+            string BodyText = "Please Find the attached Error-Log txt file";
+            
+            try
+            {
+                FileInfo inf = new FileInfo(path);
+                if (System.IO.File.Exists(inf.FullName))
+                    {
+                        using (MailMessage message = new MailMessage())
+                        {
+                            message.To.Add("support@forlabtool.com");
+                            message.Subject = "Error Logs";
+                            message.From = new MailAddress("support@forlabtool.com");
+                            message.BodyEncoding = System.Text.Encoding.GetEncoding("utf-8");
+                            System.Net.Mail.AlternateView plainview = System.Net.Mail.AlternateView.CreateAlternateViewFromString
+                                                     (System.Text.RegularExpressions.Regex.Replace(BodyText, @"<(.|\n)*?>", string.Empty), null, "text/plain");
+                            message.IsBodyHtml = false;
+                            message.AlternateViews.Add(plainview);
+                           // message.Body = "Please find the attached Error-log file";
+
+                            message.Attachments.Add(new Attachment(inf.FullName));//path + "\\bin\\Debug\\" + "error-log.txt"));
+
+                            // set smtp details
+                            smtp = new SmtpClient("mail.forlabtool.com");
+                            smtp.Port = 25;
+                            smtp.EnableSsl = false;
+                            smtp.Credentials = new NetworkCredential("support@forlabtool.com", "0Pian");
+                            smtp.Send(message);
+                         
+                        }
+                        inf.Delete();
+                    
+                    }
+                
+              
+
+            }
+            catch (Exception ex)
+            {
+                //  MessageBox.Show(ex.Message);
+
+            }
+        }
+        
+        #endregion
+
+        private void LqtMainWindowForm_Load(object sender, EventArgs e)
+        {
+            path = Path.Combine(System.IO.Path.GetTempPath(), "error-log.txt");
+                //Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "error-log.txt");
+            DoMails();
+        }
+      
+       
+       
     }
 }

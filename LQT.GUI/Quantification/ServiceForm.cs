@@ -220,88 +220,91 @@ namespace LQT.GUI.Quantification
         private void SaveGeneralInfo()
         {
             DateTime startdate = new DateTime();
-            if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Bimonthly.ToString())
+            if (comPeriod.SelectedItem != null)
             {
-                if (dtpstart.GetMonth == 0)
+                if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Bimonthly.ToString())
                 {
-                    MessageBox.Show("Month name can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (dtpstart.GetMonth == 0)
+                    {
+                        MessageBox.Show("Month name can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        if (dtpstart.GetYear == -1)//b
+                        {
+                            MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            startdate = new DateTime(dtpstart.GetYear, dtpstart.GetMonth, 1);
+                            _forecastInfo.MonthInPeriod = 2;
+                        }
+                    }
                 }
-                else
+                else if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Monthly.ToString())
                 {
-                    if (dtpstart.GetYear == -1)//b
+                    if (dtpstart.GetMonth == 0)
+                    {
+                        MessageBox.Show("Month name can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        if (dtpstart.GetYear == -1)//b
+                        {
+                            MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            startdate = new DateTime(dtpstart.GetYear, dtpstart.GetMonth, 1);
+                            _forecastInfo.MonthInPeriod = 1;
+                        }
+                    }
+
+                }
+                else if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Quarterly.ToString())
+                {
+                    if (dtpstart.GetQuarter == 0)
+                    {
+                        MessageBox.Show("Quarter name can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        if (dtpstart.GetYear == -1)//b
+                        {
+                            MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            startdate = new DateTime(dtpstart.GetYear, dtpstart.GetQuarter, 1);
+                            _forecastInfo.MonthInPeriod = 3;
+                        }
+                    }
+                }
+                else if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Yearly.ToString())
+                {
+                    if (dtpstart.GetYear == 0)
                     {
                         MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     else
                     {
-                        startdate = new DateTime(dtpstart.GetYear, dtpstart.GetMonth, 1);
-                        _forecastInfo.MonthInPeriod = 2;
-                    }
-                }
-            }
-            else if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Monthly.ToString())
-            {
-                if (dtpstart.GetMonth == 0)
-                {
-                    MessageBox.Show("Month name can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
-                {
-                    if (dtpstart.GetYear == -1)//b
-                    {
-                        MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        startdate = new DateTime(dtpstart.GetYear, dtpstart.GetMonth, 1);
-                        _forecastInfo.MonthInPeriod = 1;
-                    }
-                }
-                    
-            }
-            else if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Quarterly.ToString())
-            {
-                if (dtpstart.GetQuarter == 0)
-                {
-                    MessageBox.Show("Quarter name can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
-                {
-                    if (dtpstart.GetYear == -1)//b
-                    {
-                        MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        startdate = new DateTime(dtpstart.GetYear, dtpstart.GetQuarter, 1);
-                        _forecastInfo.MonthInPeriod = 3;
-                    }
-                }
-            }
-            else if (comPeriod.SelectedItem.ToString() == ForecastPeriodEnum.Yearly.ToString())
-            {
-                if (dtpstart.GetYear == 0)
-                {
-                    MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
-                {
-                    if (dtpstart.GetYear == -1)//b
-                    {
-                        MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        startdate = new DateTime(dtpstart.GetYear, 1, 1);
-                        _forecastInfo.MonthInPeriod = 12;
+                        if (dtpstart.GetYear == -1)//b
+                        {
+                            MessageBox.Show("Year can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            startdate = new DateTime(dtpstart.GetYear, 1, 1);
+                            _forecastInfo.MonthInPeriod = 12;
+                        }
                     }
                 }
             }

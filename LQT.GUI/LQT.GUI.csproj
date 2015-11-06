@@ -63,7 +63,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>App.ico</ApplicationIcon>
+    <ApplicationIcon>ForLab64.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>LQT.GUI.Program</StartupObject>
@@ -1887,6 +1887,7 @@
     </None>
     <None Include="app.manifest" />
     <EmbeddedResource Include="Resources\ForLAB.chm" />
+    <None Include="Resources\ForLabUM.pdf" />
     <None Include="Resources\quantification_export.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1906,6 +1907,7 @@
     <None Include="Resources\go-last.png" />
     <None Include="Resources\go-next.png" />
     <None Include="Resources\go-previous.png" />
+    <Content Include="ForLab64.ico" />
     <Content Include="Resources\MOHCW ART Sept 2007-Aug 2009.xml" />
     <EmbeddedResource Include="Resources\ImportTemplate.xls" />
     <EmbeddedResource Include="Resources\up.png" />

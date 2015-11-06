@@ -423,10 +423,13 @@ namespace LQT.GUI.Quantification
 
         private void butGohome_Click(object sender, EventArgs e)
         {
-            if (_currentCtr.DoSomthingBeforeUnload())
+            if (_currentCtr != null)
             {
-                this._currentCtr = new SiteSelection(_mforecast, _artSites);
-                LoadCurrentCtr();
+                if (_currentCtr.DoSomthingBeforeUnload())
+                {
+                    this._currentCtr = new SiteSelection(_mforecast, _artSites);
+                    LoadCurrentCtr();
+                }
             }
         }
 
